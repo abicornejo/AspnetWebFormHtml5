@@ -1,0 +1,17 @@
+﻿.backgroundModal1
+{
+	position:absolute;
+	border: 0 solid;
+	text-align:left;
+	z-index:10001;
+	background-color: #EFEFEF;
+}
+
+.backgroundBlack
+{
+	position: absolute;
+	margin: auto;
+	/*top: 0;	left: 0;*/
+	z-index: 10000;
+	background-color: #000000;
+}

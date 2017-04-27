@@ -1,0 +1,2932 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7D03017B-0C58-484A-9FE7-1A3C1EA9CBBE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FIATubeHtml5</RootNamespace>
+    <AssemblyName>FIATubeHtml5</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AdministracionDatos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\SharedBinaries\AdministracionDatos.dll</HintPath>
+    </Reference>
+    <Reference Include="ADServices, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\SharedBinaries\ADServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\SharedBinaries\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="BLL_FIATUBE">
+      <HintPath>..\..\..\FIATUBEDisenoP40\BLL_FIATUBE\bin\Release\BLL_FIATUBE.dll</HintPath>
+    </Reference>
+    <Reference Include="bouncycastle">
+      <HintPath>..\..\..\..\SharedBinaries\bouncycastle.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\..\..\SharedBinaries\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2">
+      <HintPath>..\..\..\..\SharedBinaries\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="com.dsi.pgp">
+      <HintPath>..\..\..\..\SharedBinaries\com.dsi.pgp.dll</HintPath>
+    </Reference>
+    <Reference Include="ComFotosFIATUBE">
+      <HintPath>..\..\..\FIATUBEDisenoP40\ComFotosFIATUBE\bin\Release\ComFotosFIATUBE.dll</HintPath>
+    </Reference>
+    <Reference Include="ComImpresion">
+      <HintPath>..\..\..\FIATUBEDisenoP40\ComImpresion\bin\Release\ComImpresion.dll</HintPath>
+    </Reference>
+    <Reference Include="CommunicationLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\..\..\FIATUBEDisenoP40\BLL_FIATUBE\bin\Debug\CommunicationLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponenteArchivos">
+      <HintPath>..\..\..\FIATUBEDisenoP40\ComFotosFIATUBE\bin\Debug\ComponenteArchivos.dll</HintPath>
+    </Reference>
+    <Reference Include="DLL_FIATUBE">
+      <HintPath>..\..\..\FIATUBEDisenoP40\BLL_FIATUBE\bin\Release\DLL_FIATUBE.dll</HintPath>
+    </Reference>
+    <Reference Include="DLL_P40, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\FIATUBEDisenoP40\BLL_FIATUBE\bin\Debug\DLL_P40.dll</HintPath>
+    </Reference>
+    <Reference Include="DLL_SIVID, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\FIATUBEDisenoP40\BLL_FIATUBE\bin\Debug\DLL_SIVID.dll</HintPath>
+    </Reference>
+    <Reference Include="DLL_VideotecaDigital, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\FIATUBEDisenoP40\BLL_FIATUBE\bin\Debug\DLL_VideotecaDigital.dll</HintPath>
+    </Reference>
+    <Reference Include="Entidades, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\FIATUBEDisenoP40\BLL_FIATUBE\bin\Release\Entidades.dll</HintPath>
+    </Reference>
+    <Reference Include="Esp-Searchapi, Version=5.1.1.30, Culture=neutral, PublicKeyToken=3ebca3e45699c117, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\SharedBinaries\Esp-Searchapi.dll</HintPath>
+    </Reference>
+    <Reference Include="FileComService, Version=1.0.12.1, Culture=neutral, PublicKeyToken=1da65b77b5027ee8, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\SharedBinaries\FileComService.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\SharedBinaries\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="iNEWs, Version=1.0.4386.32348, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\FIATUBEDisenoP40\BLL_FIATUBE\bin\Debug\iNEWs.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\SharedBinaries\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\SharedBinaries\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\SharedBinaries\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\..\..\SharedBinaries\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Mapping.Attributes">
+      <HintPath>..\..\..\..\SharedBinaries\NHibernate.Mapping.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="nsoftware.IPWorks, Version=8.1.3750.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\SharedBinaries\nsoftware.IPWorks.dll</HintPath>
+    </Reference>
+    <Reference Include="nsoftware.System, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\SharedBinaries\nsoftware.System.dll</HintPath>
+    </Reference>
+    <Reference Include="Nullables.NHibernate">
+      <HintPath>..\..\..\..\SharedBinaries\Nullables.NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel.Activation">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows">
+      <HintPath>..\..\..\..\SharedBinaries\System.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls">
+      <HintPath>..\..\..\..\SharedBinaries\System.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="vbCryptoLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\SharedBinaries\vbCryptoLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AztecaTube.mp4" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\001222_full.jpg" />
+    <Content Include="Images\1680_Black Cloth.jpg" />
+    <Content Include="Images\abajo.png" />
+    <Content Include="Images\accept.png" />
+    <Content Include="Images\AcceptMessage.png" />
+    <Content Include="Images\Agrega.png" />
+    <Content Include="Images\AgregaTodos.png" />
+    <Content Include="Images\Apelar.png" />
+    <Content Include="Images\arriba.png" />
+    <Content Include="Pages\Graficadores\ReportajeDetalleEmpleado.aspx" />
+    <Content Include="Pages\Ingestion\ConsultaIngestion.aspx" />
+    <Content Include="Pages\MonitoreoLocales\copy_cvs_xls.swf" />
+    <Content Include="Pages\MonitoreoLocales\copy_cvs_xls_pdf.swf" />
+    <Content Include="Pages\MonitoreoLocales\MonitoreoLocalesMaterialDisponible.aspx" />
+    <Content Include="Pages\Video\copy_csv_xls.swf" />
+    <Content Include="Pages\Video\copy_csv_xls_pdf.swf" />
+    <Content Include="Pages\Video\ReporteArchivado.aspx" />
+    <Content Include="Pages\Video\ReporteAsignacionNotas.aspx" />
+    <Content Include="Pages\Video\ReporteImplementacion.aspx" />
+    <Content Include="Scripts\Config\jquery.MetaData.js" />
+    <Content Include="Scripts\Config\jquery.rating.js" />
+    <Content Include="Scripts\Config\jquery.rating.pack.js" />
+    <Content Include="Scripts\Datatable\ColVis.js" />
+    <Content Include="Scripts\Datatable\copy_cvs_xls.swf" />
+    <Content Include="Scripts\Datatable\copy_cvs_xls_pdf.swf" />
+    <Content Include="Scripts\Datatable\FixedHeader.js" />
+    <Content Include="Scripts\Graphics\financial-data.js" />
+    <Content Include="Scripts\Graphics\RGraph.bar.js" />
+    <Content Include="Scripts\Graphics\RGraph.bipolar.js" />
+    <Content Include="Scripts\Graphics\RGraph.common.annotate.js" />
+    <Content Include="Scripts\Graphics\RGraph.common.context.js" />
+    <Content Include="Scripts\Graphics\RGraph.common.core.js" />
+    <Content Include="Scripts\Graphics\RGraph.common.dynamic.js" />
+    <Content Include="Scripts\Graphics\RGraph.common.effects.js" />
+    <Content Include="Scripts\Graphics\RGraph.common.key.js" />
+    <Content Include="Scripts\Graphics\RGraph.common.resizing.js" />
+    <Content Include="Scripts\Graphics\RGraph.common.tooltips.js" />
+    <Content Include="Scripts\Graphics\RGraph.common.zoom.js" />
+    <Content Include="Scripts\Graphics\RGraph.cornergauge.js" />
+    <Content Include="Scripts\Graphics\RGraph.fuel.js" />
+    <Content Include="Scripts\Graphics\RGraph.funnel.js" />
+    <Content Include="Scripts\Graphics\RGraph.gantt.js" />
+    <Content Include="Scripts\Graphics\RGraph.gauge.js" />
+    <Content Include="Scripts\Graphics\RGraph.hbar.js" />
+    <Content Include="Scripts\Graphics\RGraph.hprogress.js" />
+    <Content Include="Scripts\Graphics\RGraph.led.js" />
+    <Content Include="Scripts\Graphics\RGraph.line.js" />
+    <Content Include="Scripts\Graphics\RGraph.meter.js" />
+    <Content Include="Scripts\Graphics\RGraph.modaldialog.js" />
+    <Content Include="Scripts\Graphics\RGraph.odo.js" />
+    <Content Include="Scripts\Graphics\RGraph.pie.js" />
+    <Content Include="Scripts\Graphics\RGraph.radar.js" />
+    <Content Include="Scripts\Graphics\RGraph.rose.js" />
+    <Content Include="Scripts\Graphics\RGraph.rscatter.js" />
+    <Content Include="Scripts\Graphics\RGraph.scatter.js" />
+    <Content Include="Scripts\Graphics\RGraph.skeleton.js" />
+    <Content Include="Scripts\Graphics\RGraph.thermometer.js" />
+    <Content Include="Scripts\Graphics\RGraph.vprogress.js" />
+    <Content Include="Scripts\Graphics\RGraph.waterfall.js" />
+    <Content Include="Scripts\Modulos\Edicion\Duracion.js" />
+    <Content Include="Scripts\Modulos\Edicion\EmpleadosMultiples.js" />
+    <Content Include="Scripts\Modulos\Edicion\MonitorRecursosEdicion.js" />
+    <Content Include="Scripts\Modulos\Edicion\SinRealizador.js" />
+    <Content Include="Scripts\Modulos\Evaluacion\Reportes\AcumuladoMensual.js" />
+    <Content Include="Scripts\Modulos\Graficadores\Graficas.js" />
+    <Content Include="Scripts\Modulos\Graficadores\ReportajeDetalleEmpleado.js" />
+    <Content Include="Scripts\Modulos\Ingestion\ConsultaIngestion.js" />
+    <Content Include="Scripts\Modulos\MonitoreoLocales\MonitoreoLocalesMaterialDisponible.js" />
+    <Content Include="Scripts\Modulos\Video\copy_csv_xls.swf" />
+    <Content Include="Scripts\Modulos\Video\copy_csv_xls_pdf.swf" />
+    <Content Include="Scripts\Modulos\Video\ReporteArchivado.js" />
+    <Content Include="Scripts\Modulos\Video\ReporteAsignacionNotas.js" />
+    <Content Include="Scripts\Modulos\Video\ReporteImplementacion.js" />
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RatingVideo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RptAsignacionEqNotas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsLogs\WebService_ManejadorLogs.disco" />
+    <None Include="Service References\wsLogs\configuration91.svcinfo" />
+    <None Include="Service References\wsLogs\configuration.svcinfo" />
+    <None Include="Service References\wsLogs\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Styles\delete.gif" />
+    <Content Include="Styles\delete.png" />
+    <Content Include="Styles\images\arrow.gif" />
+    <Content Include="Styles\images\arrow_over.gif" />
+    <Content Include="Images\Asignado.png" />
+    <Content Include="Images\aztecatube2.png" />
+    <Content Include="Styles\images\background.png" />
+    <Content Include="Images\Background\1440_Black Background.jpg" />
+    <Content Include="Images\Background\1680_Black Cloth.jpg" />
+    <Content Include="Images\Background\200918081235 14417dam colored at the morning.jpg" />
+    <Content Include="Images\Background\bckgrndAztecaTube.png" />
+    <Content Include="Images\Background\bckgrndAztecaTubeSilver.png" />
+    <Content Include="Images\Background\Black-Texture-1680x1050.jpg" />
+    <Content Include="Images\Background\black_pattern01.jpg" />
+    <Content Include="Images\Background\black_pattern02.jpg" />
+    <Content Include="Images\Background\black_pattern03.jpg" />
+    <Content Include="Images\Background\black_pattern04.jpg" />
+    <Content Include="Images\Background\black_pattern05.jpg" />
+    <Content Include="Images\Background\black_pattern06.jpg" />
+    <Content Include="Images\Background\black_pattern07.jpg" />
+    <Content Include="Images\Background\black_pattern08.jpg" />
+    <Content Include="Images\Background\black_pattern09.jpg" />
+    <Content Include="Images\Background\black_pattern10.jpg" />
+    <Content Include="Images\Background\black_pattern11.jpg" />
+    <Content Include="Images\Background\black_pattern12.jpg" />
+    <Content Include="Images\Background\Concrete-Wall-Glitter-1024x1024-ipad-wallpapers.co %281%29.jpg" />
+    <Content Include="Images\Background\Concrete-Wall-Glitter-1024x1024-ipad-wallpapers.co.jpg" />
+    <Content Include="Images\Background\DarkBlueStripes.jpg" />
+    <Content Include="Images\Background\texture_background_1920x1080_wallpaper_Wallpaper_1920x1080_www.wallpaperhi.com %281%29.jpg" />
+    <Content Include="Images\Background\texture_background_1920x1080_wallpaper_Wallpaper_1920x1080_www.wallpaperhi.com.jpg" />
+    <Content Include="Images\Background\texture_wallpaper_134.jpg" />
+    <Content Include="Styles\images\back_disabled.jpg" />
+    <Content Include="Styles\images\back_disabled.png" />
+    <Content Include="Styles\images\back_enabled.jpg" />
+    <Content Include="Styles\images\back_enabled.png" />
+    <Content Include="Styles\images\back_enabled_hover.png" />
+    <Content Include="Images\baderecha.PNG" />
+    <Content Include="Images\base_iconos.png" />
+    <Content Include="Images\black_pattern02.jpg" />
+    <Content Include="Images\black_pattern12.jpg" />
+    <Content Include="Styles\images\collection.png" />
+    <Content Include="Styles\images\collection_hover.png" />
+    <Content Include="Styles\images\copy.png" />
+    <Content Include="Styles\images\copy_cvs_xls.swf" />
+    <Content Include="Styles\images\copy_cvs_xls_pdf.swf" />
+    <Content Include="Styles\images\copy_hover.png" />
+    <Content Include="Styles\images\csv.png" />
+    <Content Include="Styles\images\csv_hover.png" />
+    <Content Include="Images\EnlaceRojo.png" />
+    <Content Include="Images\EnlaceVerde.png" />
+    <Content Include="Styles\images\favicon.ico" />
+    <Content Include="Styles\images\forward_disabled.jpg" />
+    <Content Include="Styles\images\forward_disabled.png" />
+    <Content Include="Styles\images\forward_enabled.jpg" />
+    <Content Include="Styles\images\forward_enabled.png" />
+    <Content Include="Styles\images\forward_enabled_hover.png" />
+    <Content Include="Images\fotoEquipo.png" />
+    <Content Include="Images\icoCARRITOCOMPRASDOCK.png" />
+    <Content Include="Images\icoMAPADOCK.png" />
+    <Content Include="Images\IconoLocalVerde-02.png" />
+    <Content Include="Images\iconos\icoCARRITOCOMPRASDOCK.png" />
+    <Content Include="Images\iconos\icoMAPADOCK.png" />
+    <Content Include="Images\iconReporte.png" />
+    <Content Include="Images\Loading2.gif" />
+    <Content Include="Images\materialDisponible.png" />
+    <Content Include="Styles\images\icoCOMENTARIO.png" />
+    <Content Include="Styles\images\icoCSVLg.png" />
+    <Content Include="Styles\images\icoCSVLgHover.png" />
+    <Content Include="Styles\images\icoDOWNLOAD.png" />
+    <Content Include="Styles\images\icoDUPLICARhover.png" />
+    <Content Include="Styles\images\icoDUPLICARLg.png" />
+    <Content Include="Styles\images\icoDUPLICARLgHover.png" />
+    <Content Include="Styles\images\icoEntregadoMediaGrid.png" />
+    <Content Include="Styles\images\icoFULLSCREEN2.png" />
+    <Content Include="Styles\images\icoFULLSCREEN2b.png" />
+    <Content Include="Styles\images\icoGOBACKUNSLCTD.png" />
+    <Content Include="Styles\images\icoGONEXTUNSLCTD.png" />
+    <Content Include="Styles\images\icoNOTA.png" />
+    <Content Include="Styles\images\icoNOTAS.png" />
+    <Content Include="Styles\images\icoOPCIONES.png" />
+    <Content Include="Styles\images\icoPAUSA2.png" />
+    <Content Include="Styles\images\icoPDFLg.png" />
+    <Content Include="Styles\images\icoPDFLgHover.png" />
+    <Content Include="Styles\images\icoPRINThover.png" />
+    <Content Include="Styles\images\icoPRINTLg.png" />
+    <Content Include="Styles\images\icoprintLgHover.png" />
+    <Content Include="Styles\images\icoTRANSFERIR.png" />
+    <Content Include="Styles\images\icoXLSLg.png" />
+    <Content Include="Styles\images\icoXLSLgHover.png" />
+    <Content Include="Styles\images\pdf.png" />
+    <Content Include="Styles\images\pdf_hover.png" />
+    <Content Include="Images\Pila.png" />
+    <Content Include="Images\Player2\bottom_bg.gif" />
+    <Content Include="Images\bottom_center.gif" />
+    <Content Include="Images\bottom_left.gif" />
+    <Content Include="Images\bottom_right.gif" />
+    <Content Include="Images\btn_login.gif" />
+    <Content Include="Images\Camara.png" />
+    <Content Include="Images\cargando-1.jpg" />
+    <Content Include="Images\cargando0.jpg" />
+    <Content Include="Images\cargando1.jpg" />
+    <Content Include="Images\cargando10.jpg" />
+    <Content Include="Images\cargando2.jpg" />
+    <Content Include="Images\cargando3.jpg" />
+    <Content Include="Images\cargando4.jpg" />
+    <Content Include="Images\cargando5.jpg" />
+    <Content Include="Images\cargando6.jpg" />
+    <Content Include="Images\cargando7.jpg" />
+    <Content Include="Images\cargando8.jpg" />
+    <Content Include="Images\cargando9.jpg" />
+    <Content Include="Images\close.gif" />
+    <Content Include="Images\comen_detalle.PNG" />
+    <Content Include="Images\comen_detalle_disabled.PNG" />
+    <Content Include="Images\CompraProceso.gif" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\DeleteMessage.png" />
+    <Content Include="Images\dock-bg2.gif" />
+    <Content Include="Images\download.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\EditorTexto\bullets.png" />
+    <Content Include="Images\EditorTexto\center.png" />
+    <Content Include="Images\EditorTexto\copy.png" />
+    <Content Include="Images\EditorTexto\cut.png" />
+    <Content Include="Images\EditorTexto\dedent.png" />
+    <Content Include="Images\EditorTexto\image.png" />
+    <Content Include="Images\EditorTexto\indent.png" />
+    <Content Include="Images\EditorTexto\left.png" />
+    <Content Include="Images\EditorTexto\link.png" />
+    <Content Include="Images\EditorTexto\numbers.png" />
+    <Content Include="Images\EditorTexto\painter.png" />
+    <Content Include="Images\EditorTexto\paste.png" />
+    <Content Include="Images\EditorTexto\redo.png" />
+    <Content Include="Images\EditorTexto\right.png" />
+    <Content Include="Images\EditorTexto\strike.png" />
+    <Content Include="Images\EditorTexto\subscript.png" />
+    <Content Include="Images\EditorTexto\superscript.png" />
+    <Content Include="Images\EditorTexto\table.png" />
+    <Content Include="Images\EditorTexto\undo.png" />
+    <Content Include="Images\Feed.png" />
+    <Content Include="Images\fondo.png" />
+    <Content Include="Images\FondoAztecaTube.PNG" />
+    <Content Include="Images\fullscreen_hover.png" />
+    <Content Include="Images\fullscreen_pressed.png" />
+    <Content Include="Images\fullscreen_rest.png" />
+    <Content Include="Images\gtk-ok.png" />
+    <Content Include="Images\HD.png" />
+    <Content Include="Images\HD2.png" />
+    <Content Include="Images\history.png" />
+    <Content Include="Images\history3.png" />
+    <Content Include="Images\home_hover.png" />
+    <Content Include="Images\home_pressed.png" />
+    <Content Include="Images\home_rest.png" />
+    <Content Include="Images\icoCARRITOCOMPRAS.png" />
+    <Content Include="Images\icoEXCLAMACION.png" />
+    <Content Include="Images\icoINFO.png" />
+    <Content Include="Images\icono.png" />
+    <Content Include="Images\IconoLocalAmarillo.png" />
+    <Content Include="Images\IconoLocalAmarillo_Alerta.png" />
+    <Content Include="Images\iconos\abajo.png" />
+    <Content Include="Images\iconos\Adjuntar.png" />
+    <Content Include="Images\iconos\agenda diaria programa.png" />
+    <Content Include="Images\iconos\agenda diaria.png" />
+    <Content Include="Images\iconos\agenda semanal programa.png" />
+    <Content Include="Images\iconos\agenda semanal.png" />
+    <Content Include="Images\iconos\agregar comentario.png" />
+    <Content Include="Images\iconos\apelaciones.png" />
+    <Content Include="Images\iconos\arriba.png" />
+    <Content Include="Images\iconos\arrow_left.png" />
+    <Content Include="Images\iconos\arrow_right.png" />
+    <Content Include="Images\iconos\asignacion.png" />
+    <Content Include="Images\iconos\autorizador de avances deportes.png" />
+    <Content Include="Images\iconos\autorizador de avances.png" />
+    <Content Include="Images\iconos\autorizador de solicitudes.png" />
+    <Content Include="Images\iconos\back video.png" />
+    <Content Include="Images\iconos\backControls.PNG" />
+    <Content Include="Images\iconos\back_iconos.png" />
+    <Content Include="Images\iconos\base_iconos.png" />
+    <Content Include="Images\iconos\basura.png" />
+    <Content Include="Images\iconos\bitacora.png" />
+    <Content Include="Images\iconos\Bold.png" />
+    <Content Include="Images\iconos\buscar.png" />
+    <Content Include="Images\iconos\buscar_1.png" />
+    <Content Include="Images\iconos\busqueda avanzada.png" />
+    <Content Include="Images\iconos\calendario.PNG" />
+    <Content Include="Images\iconos\calendario2.PNG" />
+    <Content Include="Images\iconos\carrito de compras.png" />
+    <Content Include="Images\iconos\Clear.png" />
+    <Content Include="Images\iconos\consulta de ingestion.png" />
+    <Content Include="Images\iconos\consulta y seleccion.png" />
+    <Content Include="Images\iconos\copy-ico.png" />
+    <Content Include="Images\iconos\crear ot.png" />
+    <Content Include="Images\iconos\division_icono.png" />
+    <Content Include="Images\iconos\down_arrow_grey.jpg" />
+    <Content Include="Images\iconos\editar.png" />
+    <Content Include="Images\iconos\eliminar.png" />
+    <Content Include="Images\iconos\evaluar.png" />
+    <Content Include="Images\iconos\file.png" />
+    <Content Include="Images\iconos\foro.png" />
+    <Content Include="Images\iconos\home.jpg" />
+    <Content Include="Images\iconos\ico-avances.png" />
+    <Content Include="Images\iconos\ico-duplicar.png" />
+    <Content Include="Images\iconos\ico-enviar.png" />
+    <Content Include="Images\iconos\ico-guardar.png" />
+    <Content Include="Images\iconos\ico-imprimir.png" />
+    <Content Include="Images\iconos\icon-detail-profile.jpg" />
+    <Content Include="Images\iconos\icono_borrar.png" />
+    <Content Include="Images\iconos\icono_carrito.png" />
+    <Content Include="Images\iconos\icono_enviar.png" />
+    <Content Include="Images\iconos\icono_inews.png" />
+    <Content Include="Images\iconos\Italic.png" />
+    <Content Include="Images\iconos\left_arrow_grey.jpg" />
+    <Content Include="Images\iconos\LessZoom.png" />
+    <Content Include="Images\iconos\Locked.png" />
+    <Content Include="Images\iconos\mas.png" />
+    <Content Include="Images\iconos\menos.png" />
+    <Content Include="Images\iconos\monitor de recursos.png" />
+    <Content Include="Images\iconos\MoreZoom.png" />
+    <Content Include="Images\iconos\multiples ots.png" />
+    <Content Include="Images\iconos\multiples propuestas.png" />
+    <Content Include="Images\iconos\nuevo.png" />
+    <Content Include="Images\iconos\pantalla de aeropuerto.png" />
+    <Content Include="Images\iconos\pizarra.png" />
+    <Content Include="Images\iconos\pleca_gris.png" />
+    <Content Include="Images\iconos\preview.png" />
+    <Content Include="Images\iconos\proponer ot.png" />
+    <Content Include="Images\iconos\reestucturar.png" />
+    <Content Include="Images\iconos\refrescar.png" />
+    <Content Include="Images\iconos\replicar.png" />
+    <Content Include="Images\iconos\reporte anual por empleado.png" />
+    <Content Include="Images\iconos\reporte mensual por empleado.png" />
+    <Content Include="Images\iconos\right_arrow_grey.jpg" />
+    <Content Include="Images\iconos\separa_iconos.png" />
+    <Content Include="Images\iconos\solicitar ot.png" />
+    <Content Include="Images\iconos\supervision de edicion.png" />
+    <Content Include="Images\iconos\tache.png" />
+    <Content Include="Images\iconos\top_arrow_grey.jpg" />
+    <Content Include="Images\iconos\transmision_1.png" />
+    <Content Include="Images\iconos\Underline.png" />
+    <Content Include="Images\iconos\Unlocked.png" />
+    <Content Include="Images\iconos\video.png" />
+    <Content Include="Images\iconos\VideoCandadoCerrado.png" />
+    <Content Include="Images\iconos\VideoLibre.png" />
+    <Content Include="Images\iconos\word.png" />
+    <Content Include="Images\iconos\zoom in.png" />
+    <Content Include="Images\iconos\zoom out.png" />
+    <Content Include="Images\icono_video.png" />
+    <Content Include="Images\icoVISTATEASER.png" />
+    <Content Include="Images\icoWARNING.png" />
+    <Content Include="Images\ico_busqueda.png" />
+    <Content Include="Images\ico_busquedaavanzada.png" />
+    <Content Include="Images\Ico_Cerrar.gif" />
+    <Content Include="Images\image-loading.gif" />
+    <Content Include="Images\imagePlaceholder.png" />
+    <Content Include="Images\ImgWPFCerrar1.png" />
+    <Content Include="Images\ImgWPFDebatir.png" />
+    <Content Include="Images\ImgWPFIncorrecto1.png" />
+    <Content Include="Images\ImgWPFNoExisteRobot1.png" />
+    <Content Include="Images\ImgWPFNoImage1.png" />
+    <Content Include="Images\InformationMessage.png" />
+    <Content Include="Images\left.png" />
+    <Content Include="Images\list-add.png" />
+    <Content Include="Images\Loading.gif" />
+    <Content Include="Images\Loading3.gif" />
+    <Content Include="Images\LogAztecaTubeHTML5.png" />
+    <Content Include="Images\Logos\Azteca Tube.png" />
+    <Content Include="Images\Logos\aztecatube2.png" />
+    <Content Include="Images\logo_an.png" />
+    <Content Include="Images\logo_fiatube.png" />
+    <Content Include="Images\Mapa.png" />
+    <Content Include="Images\maximize.gif" />
+    <Content Include="Images\media-playback-stop.png" />
+    <Content Include="Images\middle_left.gif" />
+    <Content Include="Images\middle_right.gif" />
+    <Content Include="Images\minimize.gif" />
+    <Content Include="Images\monitor de recursos.png" />
+    <Content Include="Images\msnBussy.png" />
+    <Content Include="Images\msnMessage.png" />
+    <Content Include="Images\msnOnline.png" />
+    <Content Include="Images\msnVerde.png" />
+    <Content Include="Images\noimage.png" />
+    <Content Include="Images\nuevo.png" />
+    <Content Include="Images\nuevo1.png" />
+    <Content Include="Images\NuevoSubEvento.png" />
+    <Content Include="Images\pantalla de aeropuerto.png" />
+    <Content Include="Images\Player2\ImgWPFAdelante1.png" />
+    <Content Include="Images\Player2\ImgWPFAdelante2.png" />
+    <Content Include="Images\Player2\ImgWPFAdelanteFrame1.png" />
+    <Content Include="Images\Player2\ImgWPFAdelanteFrame2.png" />
+    <Content Include="Images\Player2\ImgWPFAtras1.png" />
+    <Content Include="Images\Player2\ImgWPFAtras2.png" />
+    <Content Include="Images\Player2\ImgWPFAtrasFrame1.png" />
+    <Content Include="Images\Player2\ImgWPFAtrasFrame2.png" />
+    <Content Include="Images\Player2\ImgWPFCintaAdelante1.png" />
+    <Content Include="Images\Player2\ImgWPFCintaAdelante2.png" />
+    <Content Include="Images\Player2\ImgWPFCintaAtras1.png" />
+    <Content Include="Images\Player2\ImgWPFCintaAtras2.png" />
+    <Content Include="Images\Player2\ImgWPFConVolumen1.png" />
+    <Content Include="Images\Player2\ImgWPFConVolumen2.png" />
+    <Content Include="Images\Player2\ImgWPFFullScreen1.png" />
+    <Content Include="Images\Player2\ImgWPFFullScreen2.png" />
+    <Content Include="Images\Player2\ImgWPFPausa1.png" />
+    <Content Include="Images\Player2\ImgWPFPausa2.png" />
+    <Content Include="Images\Player2\ImgWPFPlay1.png" />
+    <Content Include="Images\Player2\ImgWPFPlay2.png" />
+    <Content Include="Images\Player2\ImgWPFSinVolumen1.png" />
+    <Content Include="Images\Player2\ImgWPFSinVolumen2.png" />
+    <Content Include="Images\Player2\ImgWPFStop1.png" />
+    <Content Include="Images\Player2\ImgWPFStop2.png" />
+    <Content Include="Images\Player2\ImgWPFTomaFoto1.png" />
+    <Content Include="Images\Player2\ImgWPFTomaFoto2.png" />
+    <Content Include="Images\Player\adelante_1.png" />
+    <Content Include="Images\Player\adelante_2.png" />
+    <Content Include="Images\Player\atras_1.png" />
+    <Content Include="Images\Player\atras_2.png" />
+    <Content Include="Images\Player\AztecaTube.mp4" />
+    <Content Include="Images\Player\back botones play.png" />
+    <Content Include="Images\Player\back_frame_1.png" />
+    <Content Include="Images\Player\back_frame_2.png" />
+    <Content Include="Images\Player\back_tiempo.png" />
+    <Content Include="Images\Player\back_tiempo_total.png" />
+    <Content Include="Images\Player\back_video.png" />
+    <Content Include="Images\Player\b_abajo.png" />
+    <Content Include="Images\Player\b_arriba.png" />
+    <Content Include="Images\Player\fondo botones play.png" />
+    <Content Include="Images\Player\fondo.png" />
+    <Content Include="Images\Player\fondo_2.png" />
+    <Content Include="Images\Player\fondo_botones_2.png" />
+    <Content Include="Images\Player\fondo_gris_botones.png" />
+    <Content Include="Images\Player\fondo_matadata_2.png" />
+    <Content Include="Images\Player\fondo_metadata_1.png" />
+    <Content Include="Images\Player\fullscreen.png" />
+    <Content Include="Images\Player\fullscreen_1.png" />
+    <Content Include="Images\Player\fullscreen_2.png" />
+    <Content Include="Images\Player\icono_adelante.png" />
+    <Content Include="Images\Player\icono_agregar.png" />
+    <Content Include="Images\Player\icono_atras.png" />
+    <Content Include="Images\Player\icono_borrar.png" />
+    <Content Include="Images\Player\icono_enviar.png" />
+    <Content Include="Images\Player\icono_no_image.png" />
+    <Content Include="Images\Player\icono_video.png" />
+    <Content Include="Images\Player\informer.png" />
+    <Content Include="Images\Player\markin_1.png" />
+    <Content Include="Images\Player\markin_2.png" />
+    <Content Include="Images\Player\markout_1.png" />
+    <Content Include="Images\Player\markout_2.png" />
+    <Content Include="Images\Player\next_frame_1.png" />
+    <Content Include="Images\Player\next_frame_2.png" />
+    <Content Include="Images\Player\pausa_1.png" />
+    <Content Include="Images\Player\pausa_2.png" />
+    <Content Include="Images\Player\play.png" />
+    <Content Include="Images\Player\play_1.png" />
+    <Content Include="Images\Player\play_2.png" />
+    <Content Include="Images\Player\pleca_gris_fotogaleria.png" />
+    <Content Include="Images\Player\pleca_gris_video_1.png" />
+    <Content Include="Images\Player\pleca_gris_video_2.png" />
+    <Content Include="Images\Player\stop_1.png" />
+    <Content Include="Images\Player\stop_2.png" />
+    <Content Include="Images\Player\tache.png" />
+    <Content Include="Images\Player\VolumeHigh.png" />
+    <Content Include="Images\Player\VolumeMuted.png" />
+    <Content Include="Images\Player\Volume_Max.png" />
+    <Content Include="Images\Player\Volume_Min.png" />
+    <Content Include="Images\Player\_adelante_1.png" />
+    <Content Include="Images\Player\_adelante_2.png" />
+    <Content Include="Images\Player\_atras_1.png" />
+    <Content Include="Images\Player\_atras_2.png" />
+    <Content Include="Images\player_fwd.png" />
+    <Content Include="Images\player_pause.png" />
+    <Content Include="Images\player_play.png" />
+    <Content Include="Images\player_rew.png" />
+    <Content Include="Images\PlayTemp.PNG" />
+    <Content Include="Images\pleca_gris.png" />
+    <Content Include="Images\pleca_gris_1.png" />
+    <Content Include="Styles\images\print.png" />
+    <Content Include="Styles\images\print_hover.png" />
+    <Content Include="Images\propuesta.png" />
+    <Content Include="Images\Quita.png" />
+    <Content Include="Images\QuitaTodos.png" />
+    <Content Include="Images\relojazul.png" />
+    <Content Include="Images\replicar.png" />
+    <Content Include="Images\reporte anual por empleado.png" />
+    <Content Include="Images\reporte mensual por empleado.png" />
+    <Content Include="Images\right.png" />
+    <Content Include="Styles\images\sort_asc.png" />
+    <Content Include="Styles\images\sort_asc_disabled.png" />
+    <Content Include="Styles\images\sort_both.png" />
+    <Content Include="Styles\images\sort_desc.png" />
+    <Content Include="Styles\images\sort_desc_disabled.png" />
+    <Content Include="Images\stats.png" />
+    <Content Include="Images\supervision de edicion.png" />
+    <Content Include="Images\top_center.gif" />
+    <Content Include="Images\top_left.gif" />
+    <Content Include="Images\top_right.gif" />
+    <Content Include="Images\trash.PNG" />
+    <Content Include="Images\vacio.PNG" />
+    <Content Include="Images\vid.PNG" />
+    <Content Include="Images\VideoClip.png" />
+    <Content Include="Images\wallscreen.PNG" />
+    <Content Include="Images\WarningMessage.png" />
+    <Content Include="Images\workingLogo.gif" />
+    <Content Include="Styles\images\xls.png" />
+    <Content Include="Styles\images\xls_hover.png" />
+    <Content Include="Images\zoomin_hover.png" />
+    <Content Include="Images\zoomin_pressed.png" />
+    <Content Include="Images\zoomin_rest.png" />
+    <Content Include="Images\zoomout_hover.png" />
+    <Content Include="Images\zoomout_pressed.png" />
+    <Content Include="Images\zoomout_rest.png" />
+    <Content Include="Impresiones\AgendaDiariaImprimir.aspx" />
+    <Content Include="Impresiones\AgendaSemanalImprimir.aspx" />
+    <Content Include="Impresiones\BitacoraDiariaImprimir.aspx" />
+    <Content Include="Impresiones\OTImprimir.aspx" />
+    <Content Include="Pages\Administracion\AdminActor.aspx" />
+    <Content Include="Pages\Administracion\AdminAvisos.aspx" />
+    <Content Include="Pages\Administracion\AdminBloqueos.aspx" />
+    <Content Include="Pages\Administracion\AdminEmergencias.aspx" />
+    <Content Include="Pages\Administracion\AdminEspacioMediaGrid.aspx" />
+    <Content Include="Pages\Administracion\AdminMail.aspx" />
+    <Content Include="Pages\Administracion\AdminProduccion.aspx" />
+    <Content Include="Pages\Administracion\AgregarAviso.aspx" />
+    <Content Include="Pages\Administracion\AgregarProduccion.aspx" />
+    <Content Include="Pages\Administracion\CambioPuesto.aspx" />
+    <Content Include="Pages\Administracion\ControlAcceso.aspx" />
+    <Content Include="Pages\Administracion\DialogAdminEspacioMediaGrid.aspx" />
+    <Content Include="Pages\Administracion\DialogAdminMailUser.aspx" />
+    <Content Include="Pages\Administracion\Diccionario.aspx" />
+    <Content Include="Pages\Adquisiciones\AdquisicionesSubmaster.aspx" />
+    <Content Include="Pages\Adquisiciones\ComentarioAdquisicionesSubmaster.aspx" />
+    <Content Include="Pages\Adquisiciones\ReproductorVideoAdq.aspx" />
+    <Content Include="Pages\Agendas\AgendaDiaria.aspx" />
+    <Content Include="Pages\Agendas\AgendaDiariaProgramas.aspx" />
+    <Content Include="Pages\Agendas\AgendaPorPersona.aspx" />
+    <Content Include="Pages\Agendas\AgendaSemanal.aspx" />
+    <Content Include="Pages\Agendas\AgendaSemanalProgramas.aspx" />
+    <Content Include="Pages\Agendas\AgregarPrevPrograma.aspx" />
+    <Content Include="Pages\Agendas\BitacoraDiaria.aspx" />
+    <Content Include="Pages\Agendas\BitacoraDiariaProgramas.aspx" />
+    <Content Include="Pages\Agendas\CalPrevPrograma.aspx" />
+    <Content Include="Pages\Agendas\EventosDeportivos\Administracion_Parametros_EVDT.aspx" />
+    <Content Include="Pages\Agendas\EventosDeportivos\Asignacion_Parametros_EVDT.aspx" />
+    <Content Include="Pages\Agendas\EventosDeportivos\AsociarOT.aspx" />
+    <Content Include="Pages\Agendas\EventosDeportivos\EquipoTrabajo_EVDT.aspx" />
+    <Content Include="Pages\Agendas\EventosDeportivos\EventosDeportivos.aspx" />
+    <Content Include="Pages\Agendas\EventosDeportivos\EventosDeportivos_Fechas.aspx" />
+    <Content Include="Pages\Agendas\EventosDeportivos\Graficos.aspx" />
+    <Content Include="Pages\Agendas\EventosDeportivos\Logistica.aspx" />
+    <Content Include="Pages\Agendas\EventosDeportivos\Observaciones_EVDT.aspx" />
+    <Content Include="Pages\Agendas\EventosDeportivos\Valores_Parametros_EVDT.aspx" />
+    <Content Include="Pages\Agendas\FormatoXPrograma.aspx" />
+    <Content Include="Pages\Agendas\ObtenerMaterialesOT.aspx" />
+    <Content Include="Pages\AvancesMonitoreo\AvancesMoniSoloLectura.aspx" />
+    <Content Include="Pages\AvancesMonitoreo\CapturaMonitoreo.aspx" />
+    <Content Include="Pages\AvancesMonitoreo\EditarMonitoreo.aspx" />
+    <Content Include="Pages\AvancesMonitoreo\ReporteAvancesMonitoreo.aspx" />
+    <Content Include="Pages\BasePage.aspx" />
+    <Content Include="Pages\Busqueda.aspx" />
+    <Content Include="Pages\Candados\AdministradorCandados.aspx" />
+    <Content Include="Pages\Chat\Chatroom.aspx" />
+    <Content Include="Pages\Chat\FiaChat.aspx" />
+    <Content Include="Pages\Chat\UsuarioOffline.aspx" />
+    <Content Include="Pages\Cintas\Cintas.aspx" />
+    <Content Include="Pages\Consultas\ConsultaFlexible.aspx" />
+    <Content Include="Pages\Consultas\ConsultasNotasAire.aspx" />
+    <Content Include="Pages\Edicion\AgregarNotas.aspx" />
+    <Content Include="Pages\Edicion\AgregarNotasGrid.aspx" />
+    <Content Include="Pages\Edicion\ComentariosMonitor.aspx" />
+    <Content Include="Pages\Edicion\Duracion.aspx" />
+    <Content Include="Pages\Edicion\EmpleadosMultiples.aspx" />
+    <Content Include="Pages\Edicion\MonitorRecursosEdicion.aspx" />
+    <Content Include="Pages\Edicion\RealizadoresMultiples.aspx" />
+    <Content Include="Pages\Edicion\SinRealizador.aspx" />
+    <Content Include="Pages\Encuestas\AdministradorEncuestas.aspx" />
+    <Content Include="Pages\Encuestas\ContestacionEncuestas.aspx" />
+    <Content Include="Pages\Encuestas\DetallePreguntas.aspx" />
+    <Content Include="Pages\Encuestas\GraficasEncuestas.aspx" />
+    <Content Include="Pages\Encuestas\PieEncuestas.aspx" />
+    <Content Include="Pages\Encuestas\PreguntasEncuestas.aspx" />
+    <Content Include="Pages\Encuestas\RespuestasEncuestas.aspx" />
+    <Content Include="Pages\Entretenimiento\Agenda.aspx" />
+    <Content Include="Pages\Entretenimiento\AgendaSemanal.aspx" />
+    <Content Include="Pages\Entretenimiento\ConsultaFlexible.aspx" />
+    <Content Include="Pages\Entretenimiento\OT.aspx" />
+    <Content Include="Pages\Errores\SeguimientoErrores.aspx" />
+    <Content Include="Pages\Errores\VisualizacionErrores.aspx" />
+    <Content Include="Pages\Espectaculos\Agendas\AgendaDiaria.aspx" />
+    <Content Include="Pages\Espectaculos\Agendas\AgendaMensual.aspx" />
+    <Content Include="Pages\Espectaculos\Agendas\AgendaSemanal.aspx" />
+    <Content Include="Pages\Espectaculos\Agendas\AsignacionOT.aspx" />
+    <Content Include="Pages\Espectaculos\Agendas\PizarraElectronica.aspx" />
+    <Content Include="Pages\Espectaculos\Agendas\Replicar.aspx" />
+    <Content Include="Pages\Espectaculos\Consultas\ConsultaFlexible.aspx" />
+    <Content Include="Pages\Espectaculos\Foro\Foro.aspx" />
+    <Content Include="Pages\Espectaculos\Foro\ForoCintas.aspx" />
+    <Content Include="Pages\Espectaculos\Foro\ForoDetalle.aspx" />
+    <Content Include="Pages\Espectaculos\OT\LoadingRow.aspx" />
+    <Content Include="Pages\Espectaculos\OT\MultiplesOT.aspx" />
+    <Content Include="Pages\Espectaculos\OT\OT.aspx" />
+    <Content Include="Pages\Evaluacion\Apelaciones.aspx" />
+    <Content Include="Pages\Evaluacion\Apelar.aspx" />
+    <Content Include="Pages\Evaluacion\ComentarioEliminarNota.aspx" />
+    <Content Include="Pages\Evaluacion\ComentarioEvaluacion.aspx" />
+    <Content Include="Pages\Evaluacion\ComentarioNotasAztecaNoticias.aspx" />
+    <Content Include="Pages\Evaluacion\EvaluacionApelaciones.aspx" />
+    <Content Include="Pages\Evaluacion\EvaluacionNotas.aspx" />
+    <Content Include="Pages\Evaluacion\EvaluacionNotasAztecaNoticias.aspx" />
+    <Content Include="Pages\Evaluacion\EvaluacionPorPrograma.aspx" />
+    <Content Include="Pages\Evaluacion\NotasPorEvaluar.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\AcumuladoMensual.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\ApelacionesMensual.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\ApelacionMensualAnualPrograma.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\ApelacionMensualPorSeccion.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\EvaluacionProgramaMensual.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\EvaluacionProgramaRatingShare.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\EvaluacionProgramaShareAcumulado.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\EvaluacionSeccionPrograma.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\EvaluacionSeccProg.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\ReporteAcumuladoSeccion.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\ReporteArchivosSudafrica.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\ReporteEvaluacionPrograma.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\ReporteEvaluacionSeccion.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\ReporteEvaluacionSeccionFechas.aspx" />
+    <Content Include="Pages\Evaluacion\Reportes\TendenciaAnualEmpleado.aspx" />
+    <Content Include="Pages\Foros\ForoProgramas.aspx" />
+    <Content Include="Pages\Graficadores\Graficas.aspx" />
+    <Content Include="Pages\Graficadores\GraficaTendenciaAnual.aspx" />
+    <Content Include="Pages\Ingestion\NuevaIngestion.aspx" />
+    <Content Include="Pages\Ingestion\OrdenIngestion.aspx" />
+    <Content Include="Pages\Internet\MonitoreoRhozet.aspx" />
+    <Content Include="Pages\Internet\Templates\DetallesControl.aspx" />
+    <Content Include="Pages\Internet\VideosRecientes.aspx" />
+    <Content Include="Pages\MonitoreoLocales\MonitoreoLocales.aspx" />
+    <Content Include="Pages\MonitoreoLocales\MonitoreoLocalesBusqueda.aspx" />
+    <Content Include="Pages\OT\AvancesOT.aspx" />
+    <Content Include="Pages\OT\Cables.aspx" />
+    <Content Include="Pages\OT\CreaOTMultiple.aspx" />
+    <Content Include="Pages\OT\Ingestion\ConsultaIngestion.aspx" />
+    <Content Include="Pages\OT\Ingestion\OrdenIngestion.aspx" />
+    <Content Include="Pages\OT\NuevoCable.aspx" />
+    <Content Include="Pages\OT\OT.aspx" />
+    <Content Include="Pages\OT\Replicar.aspx" />
+    <Content Include="Pages\OT\TeasersyBumpers.aspx" />
+    <Content Include="Pages\Principal.aspx" />
+    <Content Include="Pages\Propuesta\CreaPropuesta.aspx" />
+    <Content Include="Pages\Propuesta\CreaPropuestaMultiple.aspx" />
+    <Content Include="Pages\Shopping Car\CableShoppingCar.aspx" />
+    <Content Include="Pages\Shopping Car\ShoppingCar.aspx" />
+    <Content Include="Pages\Solicitud\AutorizadorSolicitudes.aspx" />
+    <Content Include="Pages\Solicitud\ConvierteSolicitudOT.aspx" />
+    <Content Include="Pages\Solicitud\CreaSolicitud.aspx" />
+    <Content Include="Pages\Transferencias\Transferencias.aspx" />
+    <Content Include="Pages\UserControls\DialogBloqueoVideo.aspx" />
+    <Content Include="Pages\UserControls\MainPlayerCodePlex.aspx" />
+    <Content Include="Pages\Video\DialogRestore.aspx" />
+    <Content Include="Pages\Video\EstatusRecuperacionVideos.aspx" />
+    <Content Include="Pages\Video\VideoConsulta.aspx" />
+    <Content Include="Scripts\Config\adsRotator.js" />
+    <Content Include="Scripts\Config\config-ui.js" />
+    <Content Include="Scripts\Config\Encoder.js" />
+    <Content Include="Scripts\Config\excanvas.js" />
+    <Content Include="Scripts\Config\floating-window.js" />
+    <Content Include="Scripts\Config\jquery-1.7.1.js" />
+    <Content Include="Scripts\Config\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\Config\jquery-1.8.16.ui.min.js" />
+    <Content Include="Scripts\Config\jquery.dd.js" />
+    <Content Include="Scripts\Config\jquery.popupWindow.js" />
+    <Content Include="Scripts\Config\jquery.ui.timepicker.addon.js" />
+    <Content Include="Scripts\Config\json2.js" />
+    <Content Include="Scripts\Config\jwplayer.js" />
+    <Content Include="Scripts\Config\player.swf" />
+    <Content Include="Scripts\Config\swfobject.js" />
+    <Content Include="Scripts\Config\windowsizes.js" />
+    <Content Include="Scripts\Config\ws-names.js" />
+    <Content Include="Scripts\Config\wz_jsgraphics.js" />
+    <Content Include="Scripts\Datatable\jquery.dataTables.js" />
+    <Content Include="Scripts\Datatable\TableTools.js" />
+    <Content Include="Scripts\Datatable\ZeroClipboard.js" />
+    <Content Include="Scripts\General\entities.js" />
+    <Content Include="Scripts\General\frameMarks.js" />
+    <Content Include="Scripts\General\request-ws.js" />
+    <Content Include="Scripts\General\Utils.js" />
+    <Content Include="Scripts\Login\3DEngine.js" />
+    <Content Include="Scripts\Login\aes-enc.js" />
+    <Content Include="Scripts\Login\base64.js" />
+    <Content Include="Scripts\Login\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\Login\Login.js" />
+    <Content Include="Scripts\Login\ModalBox.js" />
+    <Content Include="Scripts\Login\mouse.js" />
+    <Content Include="Scripts\Login\PGencode.js" />
+    <Content Include="Scripts\Login\PGpubkey.js" />
+    <Content Include="Scripts\Login\rsa.js" />
+    <Content Include="Scripts\Login\sha1.js" />
+    <Content Include="Scripts\Login\Sphere.js" />
+    <Content Include="germany-en.js" />
+    <Content Include="Scripts\Maps\jquery-jvectormap.js" />
+    <Content Include="Scripts\Maps\world-en.js" />
+    <Content Include="Scripts\Modulos\Adquisiciones.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Agendas.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Agendas\AgendaDiaria.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Agendas\AgendaDiariaProgramas.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Agendas\AgendaSemanal.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Agendas\AgendaSemanalProgramas.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Agendas\BitacoraDiaria.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Agendas\BitacoraDiariaProgramas.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Agendas\EventosDeportivos\EquipoTrabajo_EVDT.js" />
+    <Content Include="Scripts\Modulos\Agendas\EventosDeportivos\EventosDeportivos.js" />
+    <Content Include="Scripts\Modulos\Agendas\EventosDeportivos\EventosDeportivos_Fechas.js" />
+    <Content Include="Scripts\Modulos\Agendas\EventosDeportivos\Observaciones_EVDT.js" />
+    <Content Include="Scripts\Modulos\Agendas\FormatoXPrograma.js" />
+    <Content Include="Scripts\Modulos\Agendas\Graficos.js" />
+    <Content Include="Scripts\Modulos\Agendas\SolicitudMaterial.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\AvancesMonitoreo\CapturaMonitoreo.js" />
+    <Content Include="Scripts\Modulos\AvancesMonitoreo\EditarMonitoreo.js" />
+    <Content Include="Scripts\Modulos\AvancesMonitoreo\ReporteAvancesMonitoreo.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\BusquedaAvanzada.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\CarruselBusqueda.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Cintas\Cintas.js" />
+    <Content Include="Scripts\Modulos\ConsultaAvanzada.js" />
+    <Content Include="Scripts\Modulos\Consultas\ConsultaFlexible.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Consultas.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Evaluacion\NotasPorEvaluar.js" />
+    <Content Include="Scripts\Modulos\Ingestion\NuevaIngestion.js" />
+    <Content Include="Scripts\Modulos\Ingestion\OrdenIngestion.js" />
+    <Content Include="Scripts\Modulos\Internet.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Encuestas.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Entretenimiento.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Errores.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Espectaculos.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Evaluacion.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\EventosDeportivos.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Ingestiones.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\jquery.carouFredSel-5.5.0.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Login.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\MonitoreoLocales\MonitoreoLocales.js" />
+    <Content Include="Scripts\Modulos\MonitoreoLocales\MonitoreoLocalesBusqueda.js" />
+    <Content Include="Scripts\Modulos\OTs.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\OTs\AvancesOT.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\OTs\Cables.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\OTs\CreaOTMultiple.js" />
+    <Content Include="Scripts\Modulos\OTs\NuevoCable.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\OTs\OT.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\OTs\Replicar.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\OTs\TeasersyBumpers.js" />
+    <Content Include="Scripts\Modulos\Propuesta\propuestas.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\recuperaVideo\FIATubeHtml5.recuperaVideo.AcopladoIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\recuperaVideo\FIATubeHtml5.recuperaVideo.Consulta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\recuperaVideo\FIATubeHtml5.recuperaVideo.ImagenesOT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\recuperaVideo\FIATubeHtml5.recuperaVideo.ImagenesVideoReferencia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\recuperaVideo\FIATubeHtml5.recuperaVideo.ImagenXAcopladoIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\recuperaVideo\FIATubeHtml5.recuperaVideo.PlayListOT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\recuperaVideo\FIATubeHtml5.recuperaVideo.PrioridadRecuperacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\recuperaVideo\FIATubeHtml5.recuperaVideo.SalidaSaveRequestDiva.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\recuperaVideo\FIATubeHtml5.recuperaVideo.TDI_BUSQUEDAS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\recuperaVideo\FIATubeHtml5.recuperaVideo.THE_SolicitudEditorIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\recuperaVideo\FIATubeHtml5.recuperaVideo.TipoRecuperacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\recuperaVideo\FIATubeHtml5.recuperaVideo.VideoRecuperacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\recuperaVideo\FIATubeHtml5.recuperaVideo.VideoRecuperacionArchivo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\recuperaVideo\WebService_RecuperaVideo.wsdl" />
+    <None Include="Service References\recuperaVideo\WebService_RecuperaVideo.disco" />
+    <None Include="Service References\recuperaVideo\configuration91.svcinfo" />
+    <None Include="Service References\recuperaVideo\configuration.svcinfo" />
+    <None Include="Service References\recuperaVideo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Scripts\Modulos\Propuesta\CreaPropuestaMultiple.js" />
+    <Content Include="Scripts\Modulos\Shopping Car\CableShoppingCar.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Shopping Car\ShoppingCar.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Solicitudes\AutorizadorSolicitudes.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Solicitudes\ConvierteSolicitudOT.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Solicitudes\CreaSolicitud.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\ToolTip.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Transferencias\Transferencias.js" />
+    <Content Include="Scripts\Modulos\UserControls\DialogBloqueoVideo.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\UserControls\MainPlayerCodePlex.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Video\EstatusRecuperacionVideos.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Video\PlayerControls.js" />
+    <Content Include="Scripts\Modulos\Video\VideoConsulta.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Modulos\Video\DialogRestore.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.AcopladoIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.ActorConnections.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Admin_Secn_Tdi_Secc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Agencia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.AgendaOT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.AgendaOTPrograma.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.ArrayOfBoolean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.ArrayOfString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.AvanceMonitoreo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.AvanceOTAutorizador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.AvanceOTAutorizadorUnico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.AvProp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.BitacoraIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.BusquedaAvanzada.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.BusquedaMultipleOTIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.CintasDanadas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Ciudad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Consulta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.ConsultaFlex.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.ContadorRows.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.ControlAcceso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.DataMap.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.DatosPantallaVisualizacionError.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.DatosVideoBloqueado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Datos_PantallaMultiplesOTsIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Datos_PantallaOTIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Datos_PantallaPropuestaIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Estado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.FastResultset.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.GridsRptAcumuladoMen.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.ImagenesOT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.ImagenesVideoReferencia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.ImagenXAcopladoIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.IngestionOT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.JobsListActive.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.MenuEmpleado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.MisAsignaciones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Monitoreo_VideoRecuperacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.My_Models_CatAutores.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.My_Models_Categorias.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.My_Models_CatKeywords.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.My_Models_Programas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.NivelGeneracion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.OpcionesBusqueda.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.OTAvance.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.OTProg.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Pais.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.PantallaOT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.PlayListOT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Play_Out_Shares.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.ProgramaEmpleado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RegresoOrdenTrabajoIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RegresoPropuestaIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RegresoSolicitud.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RptApelacionesSeccion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RptArchivSudafrica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RptBusquedaAvanzadaMainIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RptCables.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RptCompensacionesIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RptEvalProg.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RptEvaluacionSeccion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RptTendenciaAnualEmpl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.RptTipoMaterial.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Secciones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.SeccionesDeportes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.SeccionesFIAHechosTV.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.ShoppingCarResultSetIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Talento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TalentoAreaInteres.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TalentoTipoEvaluacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Agencia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Aviso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_BUSQUEDAS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Candados.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_CatErrores.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_CentroEdicion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Cliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_ClientePrograma.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_EMPL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Encuestas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_EncuestasCont.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_EncuestasPreg.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_EncuestasResp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Errores.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Estatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_EstatusEditor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_EstatusTrafico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Fmtovideo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Formato.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Internetkeywords.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Local.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_LocalEmpleado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_MedioTransmision.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Menus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_ParametrosEVDT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Poev.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Programa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_ProgramaEmpleado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_PropuestaIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Puestos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_Seccion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_SeccionFormato.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_StatusMatLocal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_TipoBloqueoVideo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_TipoEnvio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_TipoIngestion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_TipoMatTrafico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_TipoMonitoreo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_TipoNota.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_TiposFormatos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_VideoAdquisicion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TDI_VideoPlayOutIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_Adjuntos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_ApelacionComentarioIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_BloqueoVideo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_CableIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_CandadoMontos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_EquipoTrabajoIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_EquipoTrabajo_EVDTIPad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_Escaleta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_EvalIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_Evaluacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_EventoDeportivoIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_FormatoCompraIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_ForoEdicion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_GraficosIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_InternetkeywordnotaIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_InternetNotasIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_Logistica_EVDTIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_MaterialLocal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_Monitoreo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_MonitoreoRhozet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_MontosEmpleados.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_NotasAN.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_NotaTransmitida.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_Observaciones_EVDTIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_OrdenTrabajoIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_OTClipIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_ParametrosEVDT_Valores_IPAD.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_ParametrosEVDT_Vals.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_PrevisionesPrograma.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_ReaiIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_RECOIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_ReconocimientoVideoIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_REEMIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_SalaRealizador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_SolicitudEditorIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_SolicitudesExpiradasIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_SolicitudesIngestionIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_SolicitudesTraficoIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_SolicitudFormatoIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_SolicitudIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_SolMatLocal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_SolMatLocalPROGRAMADASyACTUALES.datasource" />
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_StatusRed.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_StorageLocal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.THE_VideosRecientesIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TipoNota.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TipoRecuperacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Tmu_Type_Mail_User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.TransmisionProgramaIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.Tym_Type_Mail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.VersionesOT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.VideoOTIpad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.VideoRecuperacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\FIATubeHtml5.wsFiatube.VideoRecuperacionArchivo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsFiatube\WebService_FIATube.wsdl" />
+    <None Include="Service References\wsLogs\WebService_ManejadorLogs.wsdl" />
+    <None Include="Service References\wsManejadorErrores\WebService_ManejadorErrores.disco" />
+    <None Include="Service References\wsManejadorErrores\configuration91.svcinfo" />
+    <None Include="Service References\wsManejadorErrores\configuration.svcinfo" />
+    <None Include="Service References\wsManejadorErrores\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\wsFiatube\WebService_FIATube.disco" />
+    <None Include="Service References\wsFiatube\configuration91.svcinfo" />
+    <None Include="Service References\wsFiatube\configuration.svcinfo" />
+    <None Include="Service References\wsFiatube\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServicesAsmx\WebService_FIATube.asmx" />
+    <Content Include="ServicesAsmx\WebService_ManejadorErrores.asmx" />
+    <Content Include="ServicesAsmx\WebService_ManejadorLogs.asmx" />
+    <Content Include="ServicesAsmx\WebService_RecuperaVideo.asmx" />
+    <Content Include="Styles\Datatable\demo_page.css" />
+    <Content Include="Styles\Datatable\demo_table.css" />
+    <Content Include="Styles\Datatable\TableTools.css" />
+    <Content Include="Styles\dd.css" />
+    <Content Include="Styles\floating-window.css" />
+    <Content Include="Styles\images\1680_Black Cloth.jpg" />
+    <Content Include="Styles\images\32312.jpg" />
+    <Content Include="Styles\images\abstract-motion-background.png" />
+    <Content Include="Styles\images\abstractblackwhitestripes.jpg" />
+    <Content Include="Styles\images\bg.gif" />
+    <Content Include="Styles\images\blackwave1280.jpg" />
+    <Content Include="Styles\images\btn-sprite.gif" />
+    <Content Include="Styles\images\ddn.png" />
+    <Content Include="Styles\images\dn.png" />
+    <Content Include="Styles\images\fhbg.gif" />
+    <Content Include="Styles\images\first.gif" />
+    <Content Include="Styles\images\Fondo1.jpg" />
+    <Content Include="Styles\images\Fondo10.jpg" />
+    <Content Include="Styles\images\Fondo2.jpg" />
+    <Content Include="Styles\images\Fondo3.jpg" />
+    <Content Include="Styles\images\Fondo4.jpg" />
+    <Content Include="Styles\images\fondo5.jpg" />
+    <Content Include="Styles\images\Fondo6.jpg" />
+    <Content Include="Styles\images\Fondo7.jpg" />
+    <Content Include="Styles\images\Fondo8.jpg" />
+    <Content Include="Styles\images\Fondo9.jpg" />
+    <Content Include="Styles\images\hl.png" />
+    <Content Include="Styles\images\icoACEPTAR.png" />
+    <Content Include="Styles\images\icoADJUNTAR.png" />
+    <Content Include="Styles\images\icoAGREGAR.png" />
+    <Content Include="Styles\images\icoANTERIOR.png" />
+    <Content Include="Styles\images\icoARRORIGHT.png" />
+    <Content Include="Styles\images\icoARROWDOWN.png" />
+    <Content Include="Styles\images\icoARROWLEFT.png" />
+    <Content Include="Styles\images\icoAVANZADA.png" />
+    <Content Include="Styles\images\icoBASURA.png" />
+    <Content Include="Styles\images\icoBLOQUEAR.png" />
+    <Content Include="Styles\images\icoCALENDARIO.png" />
+    <Content Include="Styles\images\icoCANCELAR.png" />
+    <Content Include="Styles\images\icoCARRITOCOMPRAS.png" />
+    <Content Include="Styles\images\icoCARRUSEL.png" />
+    <Content Include="Styles\images\icoDUPLICAR.png" />
+    <Content Include="Styles\images\icoEDITAR.png" />
+    <Content Include="Styles\images\icoEDITARDOC.png" />
+    <Content Include="Styles\images\icoENTRAR.png" />
+    <Content Include="Styles\images\icoENVIARA.png" />
+    <Content Include="Styles\images\icoFASTFOWARD.png" />
+    <Content Include="Styles\images\icoFASTFOWARDb.png" />
+    <Content Include="Styles\images\icoFULLSCREEN.png" />
+    <Content Include="Styles\images\icoGOBACK.png" />
+    <Content Include="Styles\images\icoGONEXT.png" />
+    <Content Include="Styles\images\icoGOTO.png" />
+    <Content Include="Styles\images\icoiNews.png" />
+    <Content Include="Styles\images\icoLupa.png" />
+    <Content Include="Styles\images\icoMARKIN.png" />
+    <Content Include="Styles\images\icoMARKOUT.png" />
+    <Content Include="Styles\images\icoMENOS.png" />
+    <Content Include="Styles\images\icoNUEVO.png" />
+    <Content Include="Styles\images\icoNUEVOCABLE.png" />
+    <Content Include="Styles\images\icoOT.png" />
+    <Content Include="Styles\images\icoPAUSA.png" />
+    <Content Include="Styles\images\icoPAUSAb.png" />
+    <Content Include="Styles\images\icoPLAY.png" />
+    <Content Include="Styles\images\icoPLAYb.png" />
+    <Content Include="Styles\images\icoPLAYc.png" />
+    <Content Include="Styles\images\icoPLAYLIST.png" />
+    <Content Include="Styles\images\icoPRINT.png" />
+    <Content Include="Styles\images\icoQUITAR.png" />
+    <Content Include="Styles\images\icoRECMARCAS.png" />
+    <Content Include="Styles\images\icoRECUPERAR.png" />
+    <Content Include="Styles\images\icoRECUPERARVIDEO.png" />
+    <Content Include="Styles\images\icoRELOAD.png" />
+    <Content Include="Styles\images\icoRELOJ.png" />
+    <Content Include="Styles\images\icoRESTAURARDOC.png" />
+    <Content Include="Styles\images\icoRESTVIDCOMPLETO.png" />
+    <Content Include="Styles\images\icoREWIND.png" />
+    <Content Include="Styles\images\icoREWINDb.png" />
+    <Content Include="Styles\images\icoSAVE.png" />
+    <Content Include="Styles\images\icoSENAL.png" />
+    <Content Include="Styles\images\icoSIGUIENTE.png" />
+    <Content Include="Styles\images\icoSTOP.png" />
+    <Content Include="Styles\images\icoSTOPb.png" />
+    <Content Include="Styles\images\icoSTOPc.png" />
+    <Content Include="Styles\images\icoUBICACION.png" />
+    <Content Include="Styles\images\icoVISTATEASER.png" />
+    <Content Include="Styles\images\icoVOLUMEN.png" />
+    <Content Include="Styles\images\icoVOLUMENb.png" />
+    <Content Include="Styles\images\icoWALL.png" />
+    <Content Include="Styles\images\last.gif" />
+    <Content Include="Styles\images\line.gif" />
+    <Content Include="Styles\images\load.gif" />
+    <Content Include="Styles\images\load.png" />
+    <Content Include="Styles\images\magnifier.png" />
+    <Content Include="Styles\images\next.gif" />
+    <Content Include="Styles\images\prev.gif" />
+    <Content Include="Styles\images\up.png" />
+    <Content Include="Styles\images\uup.png" />
+    <Content Include="Styles\images\wbg.gif" />
+    <Content Include="Styles\jquery.rating.css" />
+    <Content Include="Styles\Login\ModalBox.css" />
+    <Content Include="Styles\Maps\jquery-jvectormap.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Styles\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Styles\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Styles\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\smoothness\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Styles\star.gif" />
+    <Content Include="Styles\star.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Templates\FIATube.Master" />
+    <None Include="Service References\wsManejadorErrores\WebService_ManejadorErrores.wsdl" />
+    <None Include="Styles\images\.svn\all-wcprops" />
+    <None Include="Styles\images\.svn\entries" />
+    <None Include="Styles\images\.svn\prop-base\add.png.svn-base" />
+    <None Include="Styles\images\.svn\prop-base\close.png.svn-base" />
+    <None Include="Styles\images\.svn\props\bg.gif.svn-work" />
+    <None Include="Styles\images\.svn\props\btn-sprite.gif.svn-work" />
+    <None Include="Styles\images\.svn\props\ddn.png.svn-work" />
+    <None Include="Styles\images\.svn\props\dn.png.svn-work" />
+    <None Include="Styles\images\.svn\props\fhbg.gif.svn-work" />
+    <None Include="Styles\images\.svn\props\first.gif.svn-work" />
+    <None Include="Styles\images\.svn\props\hl.png.svn-work" />
+    <None Include="Styles\images\.svn\props\last.gif.svn-work" />
+    <None Include="Styles\images\.svn\props\line.gif.svn-work" />
+    <None Include="Styles\images\.svn\props\load.gif.svn-work" />
+    <None Include="Styles\images\.svn\props\load.png.svn-work" />
+    <None Include="Styles\images\.svn\props\magnifier.png.svn-work" />
+    <None Include="Styles\images\.svn\props\next.gif.svn-work" />
+    <None Include="Styles\images\.svn\props\prev.gif.svn-work" />
+    <None Include="Styles\images\.svn\props\up.png.svn-work" />
+    <None Include="Styles\images\.svn\props\uup.png.svn-work" />
+    <None Include="Styles\images\.svn\props\wbg.gif.svn-work" />
+    <None Include="Styles\images\.svn\text-base\add.png.svn-base" />
+    <None Include="Styles\images\.svn\text-base\bg.gif.svn-base" />
+    <None Include="Styles\images\.svn\text-base\btn-sprite.gif.svn-base" />
+    <None Include="Styles\images\.svn\text-base\close.png.svn-base" />
+    <None Include="Styles\images\.svn\text-base\ddn.png.svn-base" />
+    <None Include="Styles\images\.svn\text-base\dn.png.svn-base" />
+    <None Include="Styles\images\.svn\text-base\fhbg.gif.svn-base" />
+    <None Include="Styles\images\.svn\text-base\first.gif.svn-base" />
+    <None Include="Styles\images\.svn\text-base\hl.png.svn-base" />
+    <None Include="Styles\images\.svn\text-base\last.gif.svn-base" />
+    <None Include="Styles\images\.svn\text-base\line.gif.svn-base" />
+    <None Include="Styles\images\.svn\text-base\load.gif.svn-base" />
+    <None Include="Styles\images\.svn\text-base\load.png.svn-base" />
+    <None Include="Styles\images\.svn\text-base\magnifier.png.svn-base" />
+    <None Include="Styles\images\.svn\text-base\next.gif.svn-base" />
+    <None Include="Styles\images\.svn\text-base\prev.gif.svn-base" />
+    <None Include="Styles\images\.svn\text-base\up.png.svn-base" />
+    <None Include="Styles\images\.svn\text-base\uup.png.svn-base" />
+    <None Include="Styles\images\.svn\text-base\wbg.gif.svn-base" />
+    <Content Include="Templates\FiatubeNoScrolls.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\AgendaDiariaImprimir.aspx.cs">
+      <DependentUpon>AgendaDiariaImprimir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Impresiones\AgendaDiariaImprimir.aspx.designer.cs">
+      <DependentUpon>AgendaDiariaImprimir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\AgendaSemanalImprimir.aspx.cs">
+      <DependentUpon>AgendaSemanalImprimir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Impresiones\AgendaSemanalImprimir.aspx.designer.cs">
+      <DependentUpon>AgendaSemanalImprimir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\BitacoraDiariaImprimir.aspx.cs">
+      <DependentUpon>BitacoraDiariaImprimir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Impresiones\BitacoraDiariaImprimir.aspx.designer.cs">
+      <DependentUpon>BitacoraDiariaImprimir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Impresiones\OTImprimir.aspx.cs">
+      <DependentUpon>OTImprimir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Impresiones\OTImprimir.aspx.designer.cs">
+      <DependentUpon>OTImprimir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminActor.aspx.cs">
+      <DependentUpon>AdminActor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminActor.aspx.designer.cs">
+      <DependentUpon>AdminActor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminAvisos.aspx.cs">
+      <DependentUpon>AdminAvisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminAvisos.aspx.designer.cs">
+      <DependentUpon>AdminAvisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminBloqueos.aspx.cs">
+      <DependentUpon>AdminBloqueos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminBloqueos.aspx.designer.cs">
+      <DependentUpon>AdminBloqueos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminEmergencias.aspx.cs">
+      <DependentUpon>AdminEmergencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminEmergencias.aspx.designer.cs">
+      <DependentUpon>AdminEmergencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminEspacioMediaGrid.aspx.cs">
+      <DependentUpon>AdminEspacioMediaGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminEspacioMediaGrid.aspx.designer.cs">
+      <DependentUpon>AdminEspacioMediaGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminMail.aspx.cs">
+      <DependentUpon>AdminMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminMail.aspx.designer.cs">
+      <DependentUpon>AdminMail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminProduccion.aspx.cs">
+      <DependentUpon>AdminProduccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\AdminProduccion.aspx.designer.cs">
+      <DependentUpon>AdminProduccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\AgregarAviso.aspx.cs">
+      <DependentUpon>AgregarAviso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\AgregarAviso.aspx.designer.cs">
+      <DependentUpon>AgregarAviso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\AgregarProduccion.aspx.cs">
+      <DependentUpon>AgregarProduccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\AgregarProduccion.aspx.designer.cs">
+      <DependentUpon>AgregarProduccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\CambioPuesto.aspx.cs">
+      <DependentUpon>CambioPuesto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\CambioPuesto.aspx.designer.cs">
+      <DependentUpon>CambioPuesto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\ControlAcceso.aspx.cs">
+      <DependentUpon>ControlAcceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\ControlAcceso.aspx.designer.cs">
+      <DependentUpon>ControlAcceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\DialogAdminEspacioMediaGrid.aspx.cs">
+      <DependentUpon>DialogAdminEspacioMediaGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\DialogAdminEspacioMediaGrid.aspx.designer.cs">
+      <DependentUpon>DialogAdminEspacioMediaGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\DialogAdminMailUser.aspx.cs">
+      <DependentUpon>DialogAdminMailUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\DialogAdminMailUser.aspx.designer.cs">
+      <DependentUpon>DialogAdminMailUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administracion\Diccionario.aspx.cs">
+      <DependentUpon>Diccionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Administracion\Diccionario.aspx.designer.cs">
+      <DependentUpon>Diccionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Adquisiciones\AdquisicionesSubmaster.aspx.cs">
+      <DependentUpon>AdquisicionesSubmaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Adquisiciones\AdquisicionesSubmaster.aspx.designer.cs">
+      <DependentUpon>AdquisicionesSubmaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Adquisiciones\ComentarioAdquisicionesSubmaster.aspx.cs">
+      <DependentUpon>ComentarioAdquisicionesSubmaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Adquisiciones\ComentarioAdquisicionesSubmaster.aspx.designer.cs">
+      <DependentUpon>ComentarioAdquisicionesSubmaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Adquisiciones\ReproductorVideoAdq.aspx.cs">
+      <DependentUpon>ReproductorVideoAdq.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Adquisiciones\ReproductorVideoAdq.aspx.designer.cs">
+      <DependentUpon>ReproductorVideoAdq.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\AgendaDiaria.aspx.cs">
+      <DependentUpon>AgendaDiaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\AgendaDiaria.aspx.designer.cs">
+      <DependentUpon>AgendaDiaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\AgendaDiariaProgramas.aspx.cs">
+      <DependentUpon>AgendaDiariaProgramas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\AgendaDiariaProgramas.aspx.designer.cs">
+      <DependentUpon>AgendaDiariaProgramas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\AgendaPorPersona.aspx.cs">
+      <DependentUpon>AgendaPorPersona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\AgendaPorPersona.aspx.designer.cs">
+      <DependentUpon>AgendaPorPersona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\AgendaSemanal.aspx.cs">
+      <DependentUpon>AgendaSemanal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\AgendaSemanal.aspx.designer.cs">
+      <DependentUpon>AgendaSemanal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\AgendaSemanalProgramas.aspx.cs">
+      <DependentUpon>AgendaSemanalProgramas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\AgendaSemanalProgramas.aspx.designer.cs">
+      <DependentUpon>AgendaSemanalProgramas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\AgregarPrevPrograma.aspx.cs">
+      <DependentUpon>AgregarPrevPrograma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\AgregarPrevPrograma.aspx.designer.cs">
+      <DependentUpon>AgregarPrevPrograma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\BitacoraDiaria.aspx.cs">
+      <DependentUpon>BitacoraDiaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\BitacoraDiaria.aspx.designer.cs">
+      <DependentUpon>BitacoraDiaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\BitacoraDiariaProgramas.aspx.cs">
+      <DependentUpon>BitacoraDiariaProgramas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\BitacoraDiariaProgramas.aspx.designer.cs">
+      <DependentUpon>BitacoraDiariaProgramas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\CalPrevPrograma.aspx.cs">
+      <DependentUpon>CalPrevPrograma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\CalPrevPrograma.aspx.designer.cs">
+      <DependentUpon>CalPrevPrograma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\Administracion_Parametros_EVDT.aspx.cs">
+      <DependentUpon>Administracion_Parametros_EVDT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\Administracion_Parametros_EVDT.aspx.designer.cs">
+      <DependentUpon>Administracion_Parametros_EVDT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\Asignacion_Parametros_EVDT.aspx.cs">
+      <DependentUpon>Asignacion_Parametros_EVDT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\Asignacion_Parametros_EVDT.aspx.designer.cs">
+      <DependentUpon>Asignacion_Parametros_EVDT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\AsociarOT.aspx.cs">
+      <DependentUpon>AsociarOT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\AsociarOT.aspx.designer.cs">
+      <DependentUpon>AsociarOT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\EquipoTrabajo_EVDT.aspx.cs">
+      <DependentUpon>EquipoTrabajo_EVDT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\EquipoTrabajo_EVDT.aspx.designer.cs">
+      <DependentUpon>EquipoTrabajo_EVDT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\EventosDeportivos.aspx.cs">
+      <DependentUpon>EventosDeportivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\EventosDeportivos.aspx.designer.cs">
+      <DependentUpon>EventosDeportivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\EventosDeportivos_Fechas.aspx.cs">
+      <DependentUpon>EventosDeportivos_Fechas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\EventosDeportivos_Fechas.aspx.designer.cs">
+      <DependentUpon>EventosDeportivos_Fechas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\Graficos.aspx.cs">
+      <DependentUpon>Graficos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\Graficos.aspx.designer.cs">
+      <DependentUpon>Graficos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\Logistica.aspx.cs">
+      <DependentUpon>Logistica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\Logistica.aspx.designer.cs">
+      <DependentUpon>Logistica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\Observaciones_EVDT.aspx.cs">
+      <DependentUpon>Observaciones_EVDT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\Observaciones_EVDT.aspx.designer.cs">
+      <DependentUpon>Observaciones_EVDT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\Valores_Parametros_EVDT.aspx.cs">
+      <DependentUpon>Valores_Parametros_EVDT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\EventosDeportivos\Valores_Parametros_EVDT.aspx.designer.cs">
+      <DependentUpon>Valores_Parametros_EVDT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\FormatoXPrograma.aspx.cs">
+      <DependentUpon>FormatoXPrograma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\FormatoXPrograma.aspx.designer.cs">
+      <DependentUpon>FormatoXPrograma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Agendas\ObtenerMaterialesOT.aspx.cs">
+      <DependentUpon>ObtenerMaterialesOT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Agendas\ObtenerMaterialesOT.aspx.designer.cs">
+      <DependentUpon>ObtenerMaterialesOT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AvancesMonitoreo\AvancesMoniSoloLectura.aspx.cs">
+      <DependentUpon>AvancesMoniSoloLectura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AvancesMonitoreo\AvancesMoniSoloLectura.aspx.designer.cs">
+      <DependentUpon>AvancesMoniSoloLectura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AvancesMonitoreo\CapturaMonitoreo.aspx.cs">
+      <DependentUpon>CapturaMonitoreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AvancesMonitoreo\CapturaMonitoreo.aspx.designer.cs">
+      <DependentUpon>CapturaMonitoreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AvancesMonitoreo\EditarMonitoreo.aspx.cs">
+      <DependentUpon>EditarMonitoreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AvancesMonitoreo\EditarMonitoreo.aspx.designer.cs">
+      <DependentUpon>EditarMonitoreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AvancesMonitoreo\ReporteAvancesMonitoreo.aspx.cs">
+      <DependentUpon>ReporteAvancesMonitoreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AvancesMonitoreo\ReporteAvancesMonitoreo.aspx.designer.cs">
+      <DependentUpon>ReporteAvancesMonitoreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BasePage.aspx.cs">
+      <DependentUpon>BasePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BasePage.aspx.designer.cs">
+      <DependentUpon>BasePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Busqueda.aspx.cs">
+      <DependentUpon>Busqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Busqueda.aspx.designer.cs">
+      <DependentUpon>Busqueda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Candados\AdministradorCandados.aspx.cs">
+      <DependentUpon>AdministradorCandados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Candados\AdministradorCandados.aspx.designer.cs">
+      <DependentUpon>AdministradorCandados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Chat\Chatroom.aspx.cs">
+      <DependentUpon>Chatroom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Chat\Chatroom.aspx.designer.cs">
+      <DependentUpon>Chatroom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Chat\FiaChat.aspx.cs">
+      <DependentUpon>FiaChat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Chat\FiaChat.aspx.designer.cs">
+      <DependentUpon>FiaChat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Chat\UsuarioOffline.aspx.cs">
+      <DependentUpon>UsuarioOffline.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Chat\UsuarioOffline.aspx.designer.cs">
+      <DependentUpon>UsuarioOffline.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Cintas\Cintas.aspx.cs">
+      <DependentUpon>Cintas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Cintas\Cintas.aspx.designer.cs">
+      <DependentUpon>Cintas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Consultas\ConsultaFlexible.aspx.cs">
+      <DependentUpon>ConsultaFlexible.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Consultas\ConsultaFlexible.aspx.designer.cs">
+      <DependentUpon>ConsultaFlexible.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Consultas\ConsultasNotasAire.aspx.cs">
+      <DependentUpon>ConsultasNotasAire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Consultas\ConsultasNotasAire.aspx.designer.cs">
+      <DependentUpon>ConsultasNotasAire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Edicion\AgregarNotas.aspx.cs">
+      <DependentUpon>AgregarNotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Edicion\AgregarNotas.aspx.designer.cs">
+      <DependentUpon>AgregarNotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Edicion\AgregarNotasGrid.aspx.cs">
+      <DependentUpon>AgregarNotasGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Edicion\AgregarNotasGrid.aspx.designer.cs">
+      <DependentUpon>AgregarNotasGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Edicion\ComentariosMonitor.aspx.cs">
+      <DependentUpon>ComentariosMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Edicion\ComentariosMonitor.aspx.designer.cs">
+      <DependentUpon>ComentariosMonitor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Edicion\Duracion.aspx.cs">
+      <DependentUpon>Duracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Edicion\Duracion.aspx.designer.cs">
+      <DependentUpon>Duracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Edicion\EmpleadosMultiples.aspx.cs">
+      <DependentUpon>EmpleadosMultiples.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Edicion\EmpleadosMultiples.aspx.designer.cs">
+      <DependentUpon>EmpleadosMultiples.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Edicion\MonitorRecursosEdicion.aspx.cs">
+      <DependentUpon>MonitorRecursosEdicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Edicion\MonitorRecursosEdicion.aspx.designer.cs">
+      <DependentUpon>MonitorRecursosEdicion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Edicion\RealizadoresMultiples.aspx.cs">
+      <DependentUpon>RealizadoresMultiples.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Edicion\RealizadoresMultiples.aspx.designer.cs">
+      <DependentUpon>RealizadoresMultiples.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Edicion\SinRealizador.aspx.cs">
+      <DependentUpon>SinRealizador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Edicion\SinRealizador.aspx.designer.cs">
+      <DependentUpon>SinRealizador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Encuestas\AdministradorEncuestas.aspx.cs">
+      <DependentUpon>AdministradorEncuestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Encuestas\AdministradorEncuestas.aspx.designer.cs">
+      <DependentUpon>AdministradorEncuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Encuestas\ContestacionEncuestas.aspx.cs">
+      <DependentUpon>ContestacionEncuestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Encuestas\ContestacionEncuestas.aspx.designer.cs">
+      <DependentUpon>ContestacionEncuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Encuestas\DetallePreguntas.aspx.cs">
+      <DependentUpon>DetallePreguntas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Encuestas\DetallePreguntas.aspx.designer.cs">
+      <DependentUpon>DetallePreguntas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Encuestas\GraficasEncuestas.aspx.cs">
+      <DependentUpon>GraficasEncuestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Encuestas\GraficasEncuestas.aspx.designer.cs">
+      <DependentUpon>GraficasEncuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Encuestas\PieEncuestas.aspx.cs">
+      <DependentUpon>PieEncuestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Encuestas\PieEncuestas.aspx.designer.cs">
+      <DependentUpon>PieEncuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Encuestas\PreguntasEncuestas.aspx.cs">
+      <DependentUpon>PreguntasEncuestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Encuestas\PreguntasEncuestas.aspx.designer.cs">
+      <DependentUpon>PreguntasEncuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Encuestas\RespuestasEncuestas.aspx.cs">
+      <DependentUpon>RespuestasEncuestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Encuestas\RespuestasEncuestas.aspx.designer.cs">
+      <DependentUpon>RespuestasEncuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Entretenimiento\Agenda.aspx.cs">
+      <DependentUpon>Agenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Entretenimiento\Agenda.aspx.designer.cs">
+      <DependentUpon>Agenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Entretenimiento\AgendaSemanal.aspx.cs">
+      <DependentUpon>AgendaSemanal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Entretenimiento\AgendaSemanal.aspx.designer.cs">
+      <DependentUpon>AgendaSemanal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Entretenimiento\ConsultaFlexible.aspx.cs">
+      <DependentUpon>ConsultaFlexible.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Entretenimiento\ConsultaFlexible.aspx.designer.cs">
+      <DependentUpon>ConsultaFlexible.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Entretenimiento\OT.aspx.cs">
+      <DependentUpon>OT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Entretenimiento\OT.aspx.designer.cs">
+      <DependentUpon>OT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Errores\SeguimientoErrores.aspx.cs">
+      <DependentUpon>SeguimientoErrores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Errores\SeguimientoErrores.aspx.designer.cs">
+      <DependentUpon>SeguimientoErrores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Errores\VisualizacionErrores.aspx.cs">
+      <DependentUpon>VisualizacionErrores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Errores\VisualizacionErrores.aspx.designer.cs">
+      <DependentUpon>VisualizacionErrores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Agendas\AgendaDiaria.aspx.cs">
+      <DependentUpon>AgendaDiaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Agendas\AgendaDiaria.aspx.designer.cs">
+      <DependentUpon>AgendaDiaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Agendas\AgendaMensual.aspx.cs">
+      <DependentUpon>AgendaMensual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Agendas\AgendaMensual.aspx.designer.cs">
+      <DependentUpon>AgendaMensual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Agendas\AgendaSemanal.aspx.cs">
+      <DependentUpon>AgendaSemanal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Agendas\AgendaSemanal.aspx.designer.cs">
+      <DependentUpon>AgendaSemanal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Agendas\AsignacionOT.aspx.cs">
+      <DependentUpon>AsignacionOT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Agendas\AsignacionOT.aspx.designer.cs">
+      <DependentUpon>AsignacionOT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Agendas\PizarraElectronica.aspx.cs">
+      <DependentUpon>PizarraElectronica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Agendas\PizarraElectronica.aspx.designer.cs">
+      <DependentUpon>PizarraElectronica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Agendas\Replicar.aspx.cs">
+      <DependentUpon>Replicar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Agendas\Replicar.aspx.designer.cs">
+      <DependentUpon>Replicar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Consultas\ConsultaFlexible.aspx.cs">
+      <DependentUpon>ConsultaFlexible.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Consultas\ConsultaFlexible.aspx.designer.cs">
+      <DependentUpon>ConsultaFlexible.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Foro\Foro.aspx.cs">
+      <DependentUpon>Foro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Foro\Foro.aspx.designer.cs">
+      <DependentUpon>Foro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Foro\ForoCintas.aspx.cs">
+      <DependentUpon>ForoCintas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Foro\ForoCintas.aspx.designer.cs">
+      <DependentUpon>ForoCintas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Foro\ForoDetalle.aspx.cs">
+      <DependentUpon>ForoDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\Foro\ForoDetalle.aspx.designer.cs">
+      <DependentUpon>ForoDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\OT\LoadingRow.aspx.cs">
+      <DependentUpon>LoadingRow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\OT\LoadingRow.aspx.designer.cs">
+      <DependentUpon>LoadingRow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\OT\MultiplesOT.aspx.cs">
+      <DependentUpon>MultiplesOT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\OT\MultiplesOT.aspx.designer.cs">
+      <DependentUpon>MultiplesOT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\OT\OT.aspx.cs">
+      <DependentUpon>OT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Espectaculos\OT\OT.aspx.designer.cs">
+      <DependentUpon>OT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Apelaciones.aspx.cs">
+      <DependentUpon>Apelaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Apelaciones.aspx.designer.cs">
+      <DependentUpon>Apelaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Apelar.aspx.cs">
+      <DependentUpon>Apelar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Apelar.aspx.designer.cs">
+      <DependentUpon>Apelar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\ComentarioEliminarNota.aspx.cs">
+      <DependentUpon>ComentarioEliminarNota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\ComentarioEliminarNota.aspx.designer.cs">
+      <DependentUpon>ComentarioEliminarNota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\ComentarioEvaluacion.aspx.cs">
+      <DependentUpon>ComentarioEvaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\ComentarioEvaluacion.aspx.designer.cs">
+      <DependentUpon>ComentarioEvaluacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\ComentarioNotasAztecaNoticias.aspx.cs">
+      <DependentUpon>ComentarioNotasAztecaNoticias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\ComentarioNotasAztecaNoticias.aspx.designer.cs">
+      <DependentUpon>ComentarioNotasAztecaNoticias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\EvaluacionApelaciones.aspx.cs">
+      <DependentUpon>EvaluacionApelaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\EvaluacionApelaciones.aspx.designer.cs">
+      <DependentUpon>EvaluacionApelaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\EvaluacionNotas.aspx.cs">
+      <DependentUpon>EvaluacionNotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\EvaluacionNotas.aspx.designer.cs">
+      <DependentUpon>EvaluacionNotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\EvaluacionNotasAztecaNoticias.aspx.cs">
+      <DependentUpon>EvaluacionNotasAztecaNoticias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\EvaluacionNotasAztecaNoticias.aspx.designer.cs">
+      <DependentUpon>EvaluacionNotasAztecaNoticias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\EvaluacionPorPrograma.aspx.cs">
+      <DependentUpon>EvaluacionPorPrograma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\EvaluacionPorPrograma.aspx.designer.cs">
+      <DependentUpon>EvaluacionPorPrograma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\NotasPorEvaluar.aspx.cs">
+      <DependentUpon>NotasPorEvaluar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\NotasPorEvaluar.aspx.designer.cs">
+      <DependentUpon>NotasPorEvaluar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\AcumuladoMensual.aspx.cs">
+      <DependentUpon>AcumuladoMensual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\AcumuladoMensual.aspx.designer.cs">
+      <DependentUpon>AcumuladoMensual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ApelacionesMensual.aspx.cs">
+      <DependentUpon>ApelacionesMensual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ApelacionesMensual.aspx.designer.cs">
+      <DependentUpon>ApelacionesMensual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ApelacionMensualAnualPrograma.aspx.cs">
+      <DependentUpon>ApelacionMensualAnualPrograma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ApelacionMensualAnualPrograma.aspx.designer.cs">
+      <DependentUpon>ApelacionMensualAnualPrograma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ApelacionMensualPorSeccion.aspx.cs">
+      <DependentUpon>ApelacionMensualPorSeccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ApelacionMensualPorSeccion.aspx.designer.cs">
+      <DependentUpon>ApelacionMensualPorSeccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\EvaluacionProgramaMensual.aspx.cs">
+      <DependentUpon>EvaluacionProgramaMensual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\EvaluacionProgramaMensual.aspx.designer.cs">
+      <DependentUpon>EvaluacionProgramaMensual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\EvaluacionProgramaRatingShare.aspx.cs">
+      <DependentUpon>EvaluacionProgramaRatingShare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\EvaluacionProgramaRatingShare.aspx.designer.cs">
+      <DependentUpon>EvaluacionProgramaRatingShare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\EvaluacionProgramaShareAcumulado.aspx.cs">
+      <DependentUpon>EvaluacionProgramaShareAcumulado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\EvaluacionProgramaShareAcumulado.aspx.designer.cs">
+      <DependentUpon>EvaluacionProgramaShareAcumulado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\EvaluacionSeccionPrograma.aspx.cs">
+      <DependentUpon>EvaluacionSeccionPrograma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\EvaluacionSeccionPrograma.aspx.designer.cs">
+      <DependentUpon>EvaluacionSeccionPrograma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\EvaluacionSeccProg.aspx.cs">
+      <DependentUpon>EvaluacionSeccProg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\EvaluacionSeccProg.aspx.designer.cs">
+      <DependentUpon>EvaluacionSeccProg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ReporteAcumuladoSeccion.aspx.cs">
+      <DependentUpon>ReporteAcumuladoSeccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ReporteAcumuladoSeccion.aspx.designer.cs">
+      <DependentUpon>ReporteAcumuladoSeccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ReporteArchivosSudafrica.aspx.cs">
+      <DependentUpon>ReporteArchivosSudafrica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ReporteArchivosSudafrica.aspx.designer.cs">
+      <DependentUpon>ReporteArchivosSudafrica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ReporteEvaluacionPrograma.aspx.cs">
+      <DependentUpon>ReporteEvaluacionPrograma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ReporteEvaluacionPrograma.aspx.designer.cs">
+      <DependentUpon>ReporteEvaluacionPrograma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ReporteEvaluacionSeccion.aspx.cs">
+      <DependentUpon>ReporteEvaluacionSeccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ReporteEvaluacionSeccion.aspx.designer.cs">
+      <DependentUpon>ReporteEvaluacionSeccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ReporteEvaluacionSeccionFechas.aspx.cs">
+      <DependentUpon>ReporteEvaluacionSeccionFechas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\ReporteEvaluacionSeccionFechas.aspx.designer.cs">
+      <DependentUpon>ReporteEvaluacionSeccionFechas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\TendenciaAnualEmpleado.aspx.cs">
+      <DependentUpon>TendenciaAnualEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Evaluacion\Reportes\TendenciaAnualEmpleado.aspx.designer.cs">
+      <DependentUpon>TendenciaAnualEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Foros\ForoProgramas.aspx.cs">
+      <DependentUpon>ForoProgramas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Foros\ForoProgramas.aspx.designer.cs">
+      <DependentUpon>ForoProgramas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Graficadores\Graficas.aspx.cs">
+      <DependentUpon>Graficas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Graficadores\Graficas.aspx.designer.cs">
+      <DependentUpon>Graficas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Graficadores\GraficaTendenciaAnual.aspx.cs">
+      <DependentUpon>GraficaTendenciaAnual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Graficadores\GraficaTendenciaAnual.aspx.designer.cs">
+      <DependentUpon>GraficaTendenciaAnual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Graficadores\ReportajeDetalleEmpleado.aspx.cs">
+      <DependentUpon>ReportajeDetalleEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Graficadores\ReportajeDetalleEmpleado.aspx.designer.cs">
+      <DependentUpon>ReportajeDetalleEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ingestion\ConsultaIngestion.aspx.cs">
+      <DependentUpon>ConsultaIngestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Ingestion\ConsultaIngestion.aspx.designer.cs">
+      <DependentUpon>ConsultaIngestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ingestion\NuevaIngestion.aspx.cs">
+      <DependentUpon>NuevaIngestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Ingestion\OrdenIngestion.aspx.cs">
+      <DependentUpon>OrdenIngestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Ingestion\OrdenIngestion.aspx.designer.cs">
+      <DependentUpon>OrdenIngestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Internet\MonitoreoRhozet.aspx.cs">
+      <DependentUpon>MonitoreoRhozet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Internet\MonitoreoRhozet.aspx.designer.cs">
+      <DependentUpon>MonitoreoRhozet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Internet\Templates\DetallesControl.aspx.cs">
+      <DependentUpon>DetallesControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Internet\Templates\DetallesControl.aspx.designer.cs">
+      <DependentUpon>DetallesControl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Internet\VideosRecientes.aspx.cs">
+      <DependentUpon>VideosRecientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Internet\VideosRecientes.aspx.designer.cs">
+      <DependentUpon>VideosRecientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MonitoreoLocales\MonitoreoLocales.aspx.cs">
+      <DependentUpon>MonitoreoLocales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MonitoreoLocales\MonitoreoLocales.aspx.designer.cs">
+      <DependentUpon>MonitoreoLocales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MonitoreoLocales\MonitoreoLocalesBusqueda.aspx.cs">
+      <DependentUpon>MonitoreoLocalesBusqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MonitoreoLocales\MonitoreoLocalesBusqueda.aspx.designer.cs">
+      <DependentUpon>MonitoreoLocalesBusqueda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MonitoreoLocales\MonitoreoLocalesMaterialDisponible.aspx.cs">
+      <DependentUpon>MonitoreoLocalesMaterialDisponible.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MonitoreoLocales\MonitoreoLocalesMaterialDisponible.aspx.designer.cs">
+      <DependentUpon>MonitoreoLocalesMaterialDisponible.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OT\AvancesOT.aspx.cs">
+      <DependentUpon>AvancesOT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OT\AvancesOT.aspx.designer.cs">
+      <DependentUpon>AvancesOT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OT\Cables.aspx.cs">
+      <DependentUpon>Cables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OT\Cables.aspx.designer.cs">
+      <DependentUpon>Cables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OT\CreaOTMultiple.aspx.cs">
+      <DependentUpon>CreaOTMultiple.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OT\CreaOTMultiple.aspx.designer.cs">
+      <DependentUpon>CreaOTMultiple.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OT\Ingestion\ConsultaIngestion.aspx.cs">
+      <DependentUpon>ConsultaIngestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OT\Ingestion\ConsultaIngestion.aspx.designer.cs">
+      <DependentUpon>ConsultaIngestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OT\Ingestion\OrdenIngestion.aspx.cs">
+      <DependentUpon>OrdenIngestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OT\Ingestion\OrdenIngestion.aspx.designer.cs">
+      <DependentUpon>OrdenIngestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OT\NuevoCable.aspx.cs">
+      <DependentUpon>NuevoCable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OT\NuevoCable.aspx.designer.cs">
+      <DependentUpon>NuevoCable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OT\OT.aspx.cs">
+      <DependentUpon>OT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OT\OT.aspx.designer.cs">
+      <DependentUpon>OT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OT\Replicar.aspx.cs">
+      <DependentUpon>Replicar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OT\Replicar.aspx.designer.cs">
+      <DependentUpon>Replicar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OT\TeasersyBumpers.aspx.cs">
+      <DependentUpon>TeasersyBumpers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OT\TeasersyBumpers.aspx.designer.cs">
+      <DependentUpon>TeasersyBumpers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Propuesta\CreaPropuesta.aspx.cs">
+      <DependentUpon>CreaPropuesta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Propuesta\CreaPropuesta.aspx.designer.cs">
+      <DependentUpon>CreaPropuesta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Propuesta\CreaPropuestaMultiple.aspx.cs">
+      <DependentUpon>CreaPropuestaMultiple.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Propuesta\CreaPropuestaMultiple.aspx.designer.cs">
+      <DependentUpon>CreaPropuestaMultiple.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Shopping Car\CableShoppingCar.aspx.cs">
+      <DependentUpon>CableShoppingCar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Shopping Car\CableShoppingCar.aspx.designer.cs">
+      <DependentUpon>CableShoppingCar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Shopping Car\ShoppingCar.aspx.cs">
+      <DependentUpon>ShoppingCar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Shopping Car\ShoppingCar.aspx.designer.cs">
+      <DependentUpon>ShoppingCar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Solicitud\AutorizadorSolicitudes.aspx.cs">
+      <DependentUpon>AutorizadorSolicitudes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Solicitud\AutorizadorSolicitudes.aspx.designer.cs">
+      <DependentUpon>AutorizadorSolicitudes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Solicitud\ConvierteSolicitudOT.aspx.cs">
+      <DependentUpon>ConvierteSolicitudOT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Solicitud\ConvierteSolicitudOT.aspx.designer.cs">
+      <DependentUpon>ConvierteSolicitudOT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Solicitud\CreaSolicitud.aspx.cs">
+      <DependentUpon>CreaSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Solicitud\CreaSolicitud.aspx.designer.cs">
+      <DependentUpon>CreaSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Transferencias\Transferencias.aspx.cs">
+      <DependentUpon>Transferencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Transferencias\Transferencias.aspx.designer.cs">
+      <DependentUpon>Transferencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserControls\DialogBloqueoVideo.aspx.cs">
+      <DependentUpon>DialogBloqueoVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UserControls\DialogBloqueoVideo.aspx.designer.cs">
+      <DependentUpon>DialogBloqueoVideo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserControls\MainPlayerCodePlex.aspx.cs">
+      <DependentUpon>MainPlayerCodePlex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UserControls\MainPlayerCodePlex.aspx.designer.cs">
+      <DependentUpon>MainPlayerCodePlex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Video\DialogRestore.aspx.cs">
+      <DependentUpon>DialogRestore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Video\DialogRestore.aspx.designer.cs">
+      <DependentUpon>DialogRestore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Video\EstatusRecuperacionVideos.aspx.cs">
+      <DependentUpon>EstatusRecuperacionVideos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Video\EstatusRecuperacionVideos.aspx.designer.cs">
+      <DependentUpon>EstatusRecuperacionVideos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Video\ReporteArchivado.aspx.cs">
+      <DependentUpon>ReporteArchivado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Video\ReporteArchivado.aspx.designer.cs">
+      <DependentUpon>ReporteArchivado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Video\ReporteAsignacionNotas.aspx.cs">
+      <DependentUpon>ReporteAsignacionNotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Video\ReporteAsignacionNotas.aspx.designer.cs">
+      <DependentUpon>ReporteAsignacionNotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Video\ReporteImplementacion.aspx.cs">
+      <DependentUpon>ReporteImplementacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Video\ReporteImplementacion.aspx.designer.cs">
+      <DependentUpon>ReporteImplementacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Video\VideoConsulta.aspx.cs">
+      <DependentUpon>VideoConsulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Video\VideoConsulta.aspx.designer.cs">
+      <DependentUpon>VideoConsulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\recuperaVideo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsFiatube\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsLogs\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsManejadorErrores\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServicesAsmx\WebService_FIATube.asmx.cs">
+      <DependentUpon>WebService_FIATube.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServicesAsmx\WebService_ManejadorErrores.asmx.cs">
+      <DependentUpon>WebService_ManejadorErrores.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServicesAsmx\WebService_ManejadorLogs.asmx.cs">
+      <DependentUpon>WebService_ManejadorLogs.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ServicesAsmx\WebService_RecuperaVideo.asmx.cs">
+      <DependentUpon>WebService_RecuperaVideo.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Templates\FIATube.Master.cs">
+      <DependentUpon>FIATube.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\FIATube.Master.designer.cs">
+      <DependentUpon>FIATube.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\FiatubeNoScrolls.Master.cs">
+      <DependentUpon>FiatubeNoScrolls.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\FiatubeNoScrolls.Master.designer.cs">
+      <DependentUpon>FiatubeNoScrolls.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Pages\OT2\HechosTV2\" />
+    <Folder Include="Pages\OT2\HechosTV\" />
+    <Folder Include="Styles\images\.svn\tmp\prop-base\" />
+    <Folder Include="Styles\images\.svn\tmp\props\" />
+    <Folder Include="Styles\images\.svn\tmp\text-base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\recuperaVideo\" />
+    <WCFMetadataStorage Include="Service References\wsFiatube\" />
+    <WCFMetadataStorage Include="Service References\wsLogs\" />
+    <WCFMetadataStorage Include="Service References\wsManejadorErrores\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>6231</DevelopmentServerPort>
+          <DevelopmentServerVPath>/FIATubeHtml5/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

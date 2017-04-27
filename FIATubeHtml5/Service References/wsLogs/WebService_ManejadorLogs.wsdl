@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GuardarLogAccesos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogAccesos" type="tns:THE_LogAccesos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="THE_LogAccesos">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveLogAccesos" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveEmpleado" type="tns:TDI_EMPL" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Modulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dominio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MachineName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DirIP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_EMPL">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EmpleadoLlavePrimaria" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoTipo" type="tns:TDI_TipoEmpleado" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoNombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoUsr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmpleadoNumero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmpleadoChk" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoChkVisible" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_TipoEmpleado">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EmpleadoTipo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionTipoEmpleado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GuardarLogAccesosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GuardarLogAccesosResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GuardarLogAccesosSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarLogAccesos" />
+  </wsdl:message>
+  <wsdl:message name="GuardarLogAccesosSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarLogAccesosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService_ManejadorLogsSoap">
+    <wsdl:operation name="GuardarLogAccesos">
+      <wsdl:input message="tns:GuardarLogAccesosSoapIn" />
+      <wsdl:output message="tns:GuardarLogAccesosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService_ManejadorLogsSoap" type="tns:WebService_ManejadorLogsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GuardarLogAccesos">
+      <soap:operation soapAction="http://tempuri.org/GuardarLogAccesos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService_ManejadorLogsSoap12" type="tns:WebService_ManejadorLogsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GuardarLogAccesos">
+      <soap12:operation soapAction="http://tempuri.org/GuardarLogAccesos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService_ManejadorLogs">
+    <wsdl:port name="WebService_ManejadorLogsSoap" binding="tns:WebService_ManejadorLogsSoap">
+      <soap:address location="http://localhost:6231/FIATubeHtml5/ServicesAsmx/WebService_ManejadorLogs.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService_ManejadorLogsSoap12" binding="tns:WebService_ManejadorLogsSoap12">
+      <soap12:address location="http://localhost:6231/FIATubeHtml5/ServicesAsmx/WebService_ManejadorLogs.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,2121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="GetRestoreFromDiva">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filenames" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="timecodes" type="tns:ArrayOfString" />
+            <s:element minOccurs="1" maxOccurs="1" name="stickFiles" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="prioridad" type="tns:PriorityOptions" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="PriorityOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="INMEDIATO" />
+          <s:enumeration value="Alta" />
+          <s:enumeration value="MediaAlta" />
+          <s:enumeration value="Media" />
+          <s:enumeration value="MediaBaja" />
+          <s:enumeration value="Baja" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetRestoreFromDivaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetRestoreFromDivaResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRequestDiva">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jobName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="files" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="timecodes" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usrId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usrName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="stickFiles" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="prioridad" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRequestDivaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveRequestDivaResult" type="tns:SalidaSaveRequestDiva" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SalidaSaveRequestDiva">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SaveSerializeObject" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PreviousRequests" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaveRequestDiva" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="HabilitaSession">
+        <s:complexType />
+      </s:element>
+      <s:element name="HabilitaSessionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SaveRequestDivaEscaleta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="jobName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="files" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="timecodes" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usrId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usrName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="stickFiles" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="prioridad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sendPlayOut" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveRequestDivaEscaletaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveRequestDivaEscaletaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaVideoRecuperacionArchivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oVideoRecuperacion" type="tns:VideoRecuperacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VideoRecuperacion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Directo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveLocal" type="tns:TDI_Local" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDAutorizacion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AutorizacionAdquisi" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CveVideoRecuperacion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreVideoRecuperacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="oTipoRecuperacion" type="tns:TipoRecuperacion" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaVideoRecuperacion" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TiempoTotal" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PorcentajeRecuperacion" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveEmpleado" type="tns:TDI_EMPL" />
+          <s:element minOccurs="0" maxOccurs="1" name="GuidSystem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeSistema" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProgramaSolicita" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Prioridad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsParaPlayOUT" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FlagSystem" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoMaterial" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountErrores" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstatusBorrado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RecuperacionesPrevias" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_Local">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LocalDescripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LocalLlave" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoLlave" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalFTP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoclUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalContrasenia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalAbrebiatura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoclEstatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoclUp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoclLeft" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoclConexion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="loclWorkMax" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoclBandWidth" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TipoRecuperacion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveTipoRecuperacion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreTiporecuperacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Estatus" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_EMPL">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EmpleadoLlavePrimaria" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoTipo" type="tns:TDI_TipoEmpleado" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoNombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoUsr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmpleadoNumero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmpleadoChk" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoChkVisible" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_TipoEmpleado">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EmpleadoTipo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionTipoEmpleado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaVideoRecuperacionArchivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaVideoRecuperacionArchivosResult" type="tns:ArrayOfVideoRecuperacionArchivo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVideoRecuperacionArchivo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VideoRecuperacionArchivo" nillable="true" type="tns:VideoRecuperacionArchivo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VideoRecuperacionArchivo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveVideoRecuperacionArchivo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdNombreArchivo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TiempoInicial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TiempoFinal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="oVideoRecuperacion" type="tns:VideoRecuperacion" />
+          <s:element minOccurs="0" maxOccurs="1" name="RutaVideo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoMaterial" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaPrivilegioRecuperacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empl_llav_pr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaPrivilegioRecuperacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConsultaPrivilegioRecuperacionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaTipoRecuperacionVideos">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConsultaTipoRecuperacionVideosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaTipoRecuperacionVideosResult" type="tns:ArrayOfTipoRecuperacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTipoRecuperacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TipoRecuperacion" nillable="true" type="tns:TipoRecuperacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaVideoRecuperacionPorEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cveEmpleado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaIni" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaFin" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaVideoRecuperacionPorEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaVideoRecuperacionPorEmpleadoResult" type="tns:ArrayOfVideoRecuperacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVideoRecuperacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VideoRecuperacion" nillable="true" type="tns:VideoRecuperacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertarVideoRecuperacionyArchivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oVideoRecuperacion" type="tns:VideoRecuperacion" />
+            <s:element minOccurs="0" maxOccurs="1" name="lstVideoRecuperacionArchivo" type="tns:ArrayOfVideoRecuperacionArchivo" />
+            <s:element minOccurs="1" maxOccurs="1" name="esNotificame" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="LogTransacciones" type="tns:THE_LogTransacciones" />
+            <s:element minOccurs="1" maxOccurs="1" name="isUserGrant" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="isUserGrantAdquisi" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="THE_LogTransacciones">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveLogTransaccion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveTran" type="tns:TDI_Transaccion" />
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dominio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MachineName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DirIP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_Transaccion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveTransaccion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertarVideoRecuperacionyArchivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarVideoRecuperacionyArchivosResult" type="tns:VideoRecuperacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarMarcasVideoRecuperacionyArchivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oVideoRecuperacion" type="tns:VideoRecuperacion" />
+            <s:element minOccurs="0" maxOccurs="1" name="lstVideoRecuperacionArchivo" type="tns:ArrayOfVideoRecuperacionArchivo" />
+            <s:element minOccurs="1" maxOccurs="1" name="esNotificarme" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="LogTransacciones" type="tns:THE_LogTransacciones" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarMarcasVideoRecuperacionyArchivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarMarcasVideoRecuperacionyArchivosResult" type="tns:VideoRecuperacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrefixArchivo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="esin_llav_pr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrefixArchivoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPrefixArchivoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaDatosSolicitudEditor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CveEmpleado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CveCentroEdicion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CveEstatusEditor" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CvePrograma" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CveSeccion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaIni" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaDatosSolicitudEditorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaDatosSolicitudEditorResult" type="tns:ArrayOfTHE_SolicitudEditorIpad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTHE_SolicitudEditorIpad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="THE_SolicitudEditorIpad" nillable="true" type="tns:THE_SolicitudEditorIpad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="THE_SolicitudEditorIpad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveSolicitudEditor" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveOrdenTrabajo" type="tns:THE_OrdenTrabajoIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="CvePrograma" type="tns:TDI_Programa" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveEmpleado" type="tns:TDI_EMPL" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveCentroEdicion" type="tns:TDI_CentroEdicion" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveEstatusEditor" type="tns:TDI_EstatusEditor" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFin" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Duracion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="iNews" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comentario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DuracionReal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Formato" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaAire" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="LstRealizadores" type="tns:ArrayOfTDI_EMPL" />
+          <s:element minOccurs="0" maxOccurs="1" name="LstEstatusEditor" type="tns:ArrayOfTDI_EstatusEditor" />
+          <s:element minOccurs="1" maxOccurs="1" name="Indexrealizadores" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndexEstatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnableEstatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="LstEquipotrab" type="tns:ArrayOfTHE_EquipoTrabajoIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="DurMuestra" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DurRealMuestra" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="THE_OrdenTrabajoIpad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IndiceValidacionInsercion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CveOrdenTrabajo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Version" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveSeccion" type="tns:TDI_Seccion" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveCliente" type="tns:TDI_Cliente" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaEvento" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Objetivo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HistoryLine" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveEmpleado" type="tns:TDI_EMPL" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Origen" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Orini" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveTipoNota" type="tns:TDI_TipoNota" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsuarioProductor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Replica" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SolicitudPremisia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveOrigen" type="tns:TDI_Origen" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClaveOrdenTrabajo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveEventoDeportivo" type="tns:THE_EventoDeportivoIpad" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndiceCompra" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaAgenda" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveCable" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmplCrea" type="tns:TDI_EMPL" />
+          <s:element minOccurs="0" maxOccurs="1" name="MostLlave" type="tns:TDI_Most" />
+          <s:element minOccurs="1" maxOccurs="1" name="OAS_Local" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaEntregaEspectaculos" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Empresa" type="tns:TDI_Empresa" />
+          <s:element minOccurs="0" maxOccurs="1" name="Local" type="tns:TDI_Local" />
+          <s:element minOccurs="0" maxOccurs="1" name="Programa" type="tns:TDI_Programa" />
+          <s:element minOccurs="0" maxOccurs="1" name="FabrLlave" type="tns:TDI_FabricaIpad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_Seccion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoLlavePrimaria" type="tns:TDI_EMPL" />
+          <s:element minOccurs="1" maxOccurs="1" name="SeccionFIA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExtensionResponsable" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponsableSeccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorSeccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstatusSeccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreSeccion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CveSeccion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MediaGridActual" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MediaGridRuta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MediaGridTotal" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_Cliente">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveCliente" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreDescripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstatusCliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoLlavePrimaria" type="tns:TDI_EMPL" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_TipoNota">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveTipoNota" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionTipoNota" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AbreviaturaTipoNota" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstatusTipoNota" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_Origen">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveOrigen" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreOrigen" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="THE_EventoDeportivoIpad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdEvento" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sTitulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sDescripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sLugar" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtFechaInicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtFechaFin" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="sEstatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sUsuMov" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrdenTrabajo" type="tns:ArrayOfTHE_OrdenTrabajoIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="sHoraIni" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sHoraFin" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ieventoPadre" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CvePrograma" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="subEventos" type="tns:ArrayOfTHE_EventoDeportivoIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="solicitudes" type="tns:ArrayOfTHE_SolicitudFormatoIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="senales" type="tns:ArrayOfTHE_OrdenTrabajoIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="logistica" type="tns:ArrayOfTHE_Logistica_EVDTIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="eqTrabajo" type="tns:ArrayOfTHE_EquipoTrabajo_EVDTIPad" />
+          <s:element minOccurs="0" maxOccurs="1" name="Parametros" type="tns:ArrayOfTHE_ParametrosEVDT_Valores_IPAD" />
+          <s:element minOccurs="0" maxOccurs="1" name="agendaPrograma" type="tns:ArrayOfOTProg" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTHE_OrdenTrabajoIpad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="THE_OrdenTrabajoIpad" nillable="true" type="tns:THE_OrdenTrabajoIpad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTHE_EventoDeportivoIpad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="THE_EventoDeportivoIpad" nillable="true" type="tns:THE_EventoDeportivoIpad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTHE_SolicitudFormatoIpad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="THE_SolicitudFormatoIpad" nillable="true" type="tns:THE_SolicitudFormatoIpad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="THE_SolicitudFormatoIpad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveSolicitudFormato" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveSolicitud" type="tns:THE_SolicitudIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="CvePrograma" type="tns:TDI_Programa" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveFormato" type="tns:TDI_Formato" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCompra" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Duracion" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisibilidadBotonAutoriza" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="VisibilidadBotonRechaza" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HabilitaBoton" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstatusTexto" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="THE_SolicitudIpad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveSolicitud" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveSeccion" type="tns:TDI_Seccion" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveCliente" type="tns:TDI_Cliente" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Objetivo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HistoryLine" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveEmpleado" type="tns:TDI_EMPL" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CveOrdenTrabajo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ClaveOT" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaSolicitud" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tema" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveTipoNota" type="tns:TDI_TipoNota" />
+          <s:element minOccurs="0" maxOccurs="1" name="EventoDeportivo" type="tns:THE_EventoDeportivoIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="Local" type="tns:TDI_Local" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fabrica" type="tns:TDI_FabricaIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="Empresa" type="tns:TDI_Empresa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_FabricaIpad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FabricaLlavePrimaria" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FabricaDescripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FabricaAbreviacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Programa" type="tns:ArrayOfTDI_Programa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTDI_Programa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TDI_Programa" nillable="true" type="tns:TDI_Programa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_Programa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EsFiaNoticias" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdIBOP" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EsFia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreIBOP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiasTransmision" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFin" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Canal" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Abreviatura2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Abreviatura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HoraTransmision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdCC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstatusPrograma" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombrePrograma" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CvePrograma" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsAztecaAmerica" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsDeporteContacto" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MediaGridTotal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MediaGridActual" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MediaGridRuta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CveFabrica" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CarpetaiNews" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="oEmpresa" type="tns:TDI_Empresa" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoPrograma" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiaGrabacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiaEdicion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_Empresa">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveEmpresa" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreEmpresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Abreviatura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BanderaIngestionAzteca" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_Formato">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveFormato" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Abreviatura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Aplica" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Duracion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="INews" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTHE_Logistica_EVDTIpad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="THE_Logistica_EVDTIpad" nillable="true" type="tns:THE_Logistica_EVDTIpad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="THE_Logistica_EVDTIpad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdLogistica" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EventoDeportivo" type="tns:THE_EventoDeportivoIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="sLugar" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtFecha" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="sHora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sObservacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtFechaCreacion" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="sUsuMov" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArchivosLogistica" type="tns:ArrayOfTHE_ARCHIVO_LOGISTICAIpad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTHE_ARCHIVO_LOGISTICAIpad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="THE_ARCHIVO_LOGISTICAIpad" nillable="true" type="tns:THE_ARCHIVO_LOGISTICAIpad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="THE_ARCHIVO_LOGISTICAIpad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdArchivo" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Logistica" type="tns:THE_Logistica_EVDTIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="sNombreArchivo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTamano" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdLogistica" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTHE_EquipoTrabajo_EVDTIPad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="THE_EquipoTrabajo_EVDTIPad" nillable="true" type="tns:THE_EquipoTrabajo_EVDTIPad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="THE_EquipoTrabajo_EVDTIPad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdEquipoTrabajo" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EventoDeportivo" type="tns:THE_EventoDeportivoIpad" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEmpleado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="snombreEmpleado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtFechaEQ" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTHE_ParametrosEVDT_Valores_IPAD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="THE_ParametrosEVDT_Valores_IPAD" nillable="true" type="tns:THE_ParametrosEVDT_Valores_IPAD" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="THE_ParametrosEVDT_Valores_IPAD">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idParametroValor" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="idEvento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="idParametro" type="tns:TDI_ParametrosEVDT" />
+          <s:element minOccurs="0" maxOccurs="1" name="sParametroValor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sParametroValores" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PARAMETROS" type="tns:ArrayOfTHE_ParametrosEVDT_Vals" />
+          <s:element minOccurs="1" maxOccurs="1" name="iValorSeleccionado" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_ParametrosEVDT">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idParametro" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sdescripcionParametro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sestatusParametro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="stipoParametro" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTHE_ParametrosEVDT_Vals">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="THE_ParametrosEVDT_Vals" nillable="true" type="tns:THE_ParametrosEVDT_Vals" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="THE_ParametrosEVDT_Vals">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="iContador" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sValor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bSeleccionado" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfOTProg">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OTProg" nillable="true" type="tns:OTProg" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OTProg">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OtraLlPr" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsinLlPr" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FmtoLlPr" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FoepFecr" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="FoepUscr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FoepFiap" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="SeccColr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtraTitu" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SeccLlPr" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FabrDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SeccDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EsinDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TieneAvance" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FmtoDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OtraOrig" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtraRepl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TnoDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EsinAbre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FmtoDura" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtraStli" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtraCvec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FabrColr" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmprLlPr" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumotCom" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_Most">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MostLlave" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MostDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_CentroEdicion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveCentroEdicion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="INew" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_EstatusEditor">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveEstatusEd" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Color" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTDI_EMPL">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TDI_EMPL" nillable="true" type="tns:TDI_EMPL" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTDI_EstatusEditor">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TDI_EstatusEditor" nillable="true" type="tns:TDI_EstatusEditor" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTHE_EquipoTrabajoIpad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="THE_EquipoTrabajoIpad" nillable="true" type="tns:THE_EquipoTrabajoIpad" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="THE_EquipoTrabajoIpad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveEquipoTrabajo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveOrdenTrabajo" type="tns:THE_OrdenTrabajoIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="PuestoLlavePrimaria" type="tns:TDI_Puestos" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoLlavePrimaria" type="tns:TDI_EMPL" />
+          <s:element minOccurs="1" maxOccurs="1" name="VersionOT" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CvePrograma" type="tns:TDI_Programa" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClavePrograma" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_Puestos">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PuestoLlavePrimaria" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PuestoDescripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PuestoStatus" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ObtenerRecuperacionesXNumEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NumEmpleado" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaIni" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaFin" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerRecuperacionesXNumEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerRecuperacionesXNumEmpleadoResult" type="tns:ArrayOfVideoRecuperacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBusquedasByUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBusquedasByUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBusquedasByUsuarioResult" type="tns:ArrayOfTDI_BUSQUEDAS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTDI_BUSQUEDAS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TDI_BUSQUEDAS" nillable="true" type="tns:TDI_BUSQUEDAS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_BUSQUEDAS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdBusqueda" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TabNombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DetalleBusqueda" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getBusquedasByUsuarioFilters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaInicial" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaFinal" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="filtro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBusquedasByUsuarioFiltersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBusquedasByUsuarioFiltersResult" type="tns:ArrayOfTDI_BUSQUEDAS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardaBusquedas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oBusquedas" type="tns:TDI_BUSQUEDAS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardaBusquedasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GuardaBusquedasResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorraBusquedaByNombre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oBusquedaToDelete" type="tns:TDI_BUSQUEDAS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BorraBusquedaByNombreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BorraBusquedaByNombreResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminaVideoRecuperacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oVideoRecuperacion" type="tns:VideoRecuperacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminaVideoRecuperacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminaVideoRecuperacionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaPrioridadVideoRecu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CveProgVideo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AbrevProg" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaAConsultar" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaPrioridadVideoRecuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaPrioridadVideoRecuResult" type="tns:ArrayOfPrioridadRecuperacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPrioridadRecuperacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PrioridadRecuperacion" nillable="true" type="tns:PrioridadRecuperacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PrioridadRecuperacion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IDProgVideo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDProgPrio" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreProg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AbrevProg" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaIni" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFin" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransLunes" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransMartes" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransMiercoles" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransJueves" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransViernes" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransSabado" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransDomingo" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Prioridad" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CrearNuevaCollection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="numEmpleado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="busqueda" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearNuevaCollectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearNuevaCollectionResult" type="tns:ArrayOfConsulta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfConsulta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Consulta" nillable="true" type="tns:Consulta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Consulta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="idFileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LLaveOT" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VideoFileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FotoIni" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FotoFin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PalabrasClaves" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Suceso" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListaImagenesUniverse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListaImagenesUniverseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListaImagenesUniverseResult" type="tns:ArrayOfConsulta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardaAcoplados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oAcoplado" type="tns:AcopladoIpad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AcopladoIpad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdAcoplado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PalabraClave" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LstImagenes" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GuardaAcopladosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GuardaAcopladosResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardaImgXAcoplado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oImgXAcoplado" type="tns:ImagenXAcopladoIpad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ImagenXAcopladoIpad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IdAcoplado" type="tns:AcopladoIpad" />
+          <s:element minOccurs="0" maxOccurs="1" name="VdoIdFilename" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RutaImagen" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GuardaImgXAcopladoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GuardaImgXAcopladoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListaAcoplados">
+        <s:complexType />
+      </s:element>
+      <s:element name="getListaAcopladosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getListaAcopladosResult" type="tns:ArrayOfAcopladoIpad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAcopladoIpad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AcopladoIpad" nillable="true" type="tns:AcopladoIpad" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListaAcopladosImg">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListaAcopladosImgResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListaAcopladosImgResult" type="tns:ArrayOfAcopladoIpad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListaImagenesXAcoplado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oAcoplado" type="tns:AcopladoIpad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListaImagenesXAcopladoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getListaImagenesXAcopladoResult" type="tns:ArrayOfImagenXAcopladoIpad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfImagenXAcopladoIpad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ImagenXAcopladoIpad" nillable="true" type="tns:ImagenXAcopladoIpad" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EliminaTodoAcoplado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oAcoplado" type="tns:AcopladoIpad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminaTodoAcopladoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminaTodoAcopladoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminaImagenesXAcoplado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oImgXAcoplado" type="tns:ImagenXAcopladoIpad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminaImagenesXAcopladoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminaImagenesXAcopladoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaAcoplado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oAcoplado" type="tns:AcopladoIpad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaAcopladoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizaAcopladoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaImagenes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OTRA_CVEC" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaImagenesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaImagenesResult" type="tns:ArrayOfImagenesOT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfImagenesOT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ImagenesOT" nillable="true" type="tns:ImagenesOT" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImagenesOT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OtraCvec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImagUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDVideo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoImagen" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaImagenesOTByVideoReferencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OTRA_CVEC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VideoReferencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DetIdFilename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vdo_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaImagenesOTByVideoReferenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaImagenesOTByVideoReferenciaResult" type="tns:ArrayOfImagenesVideoReferencia" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfImagenesVideoReferencia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ImagenesVideoReferencia" nillable="true" type="tns:ImagenesVideoReferencia" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImagenesVideoReferencia">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OTCvec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdVideo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Foto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Tiempo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaImagenesOTByVideoReferenciaExtraDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OTRA_CVEC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VideoReferencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DetIdFilename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vdo_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaImagenesOTByVideoReferenciaExtraDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaImagenesOTByVideoReferenciaExtraDetalleResult" type="tns:ArrayOfImagenesVideoReferencia" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaPlayListOT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="numOT" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VdoIdFilename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaPlayListOTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaPlayListOTResult" type="tns:ArrayOfPlayListOT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPlayListOT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlayListOT" nillable="true" type="tns:PlayListOT" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlayListOT">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OT" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OTCvec" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdVideo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Foto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreVideo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Seccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Titulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FotosConcatenadas" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombrePrograma" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NotaTransmitida" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaVid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PalClaves" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Personajes" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetRestoreFromDivaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRestoreFromDiva" />
+  </wsdl:message>
+  <wsdl:message name="GetRestoreFromDivaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRestoreFromDivaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveRequestDivaSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveRequestDiva" />
+  </wsdl:message>
+  <wsdl:message name="SaveRequestDivaSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveRequestDivaResponse" />
+  </wsdl:message>
+  <wsdl:message name="HabilitaSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:HabilitaSession" />
+  </wsdl:message>
+  <wsdl:message name="HabilitaSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:HabilitaSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveRequestDivaEscaletaSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveRequestDivaEscaleta" />
+  </wsdl:message>
+  <wsdl:message name="SaveRequestDivaEscaletaSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveRequestDivaEscaletaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaVideoRecuperacionArchivosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaVideoRecuperacionArchivos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaVideoRecuperacionArchivosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaVideoRecuperacionArchivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPrivilegioRecuperacionSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaPrivilegioRecuperacion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPrivilegioRecuperacionSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaPrivilegioRecuperacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTipoRecuperacionVideosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaTipoRecuperacionVideos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTipoRecuperacionVideosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaTipoRecuperacionVideosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaVideoRecuperacionPorEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaVideoRecuperacionPorEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaVideoRecuperacionPorEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaVideoRecuperacionPorEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarVideoRecuperacionyArchivosSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarVideoRecuperacionyArchivos" />
+  </wsdl:message>
+  <wsdl:message name="InsertarVideoRecuperacionyArchivosSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarVideoRecuperacionyArchivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarMarcasVideoRecuperacionyArchivosSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarMarcasVideoRecuperacionyArchivos" />
+  </wsdl:message>
+  <wsdl:message name="InsertarMarcasVideoRecuperacionyArchivosSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarMarcasVideoRecuperacionyArchivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPrefixArchivoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPrefixArchivo" />
+  </wsdl:message>
+  <wsdl:message name="GetPrefixArchivoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPrefixArchivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDatosSolicitudEditorSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaDatosSolicitudEditor" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDatosSolicitudEditorSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaDatosSolicitudEditorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRecuperacionesXNumEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerRecuperacionesXNumEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerRecuperacionesXNumEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerRecuperacionesXNumEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBusquedasByUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:getBusquedasByUsuario" />
+  </wsdl:message>
+  <wsdl:message name="getBusquedasByUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:getBusquedasByUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBusquedasByUsuarioFiltersSoapIn">
+    <wsdl:part name="parameters" element="tns:getBusquedasByUsuarioFilters" />
+  </wsdl:message>
+  <wsdl:message name="getBusquedasByUsuarioFiltersSoapOut">
+    <wsdl:part name="parameters" element="tns:getBusquedasByUsuarioFiltersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardaBusquedasSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardaBusquedas" />
+  </wsdl:message>
+  <wsdl:message name="GuardaBusquedasSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardaBusquedasResponse" />
+  </wsdl:message>
+  <wsdl:message name="BorraBusquedaByNombreSoapIn">
+    <wsdl:part name="parameters" element="tns:BorraBusquedaByNombre" />
+  </wsdl:message>
+  <wsdl:message name="BorraBusquedaByNombreSoapOut">
+    <wsdl:part name="parameters" element="tns:BorraBusquedaByNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminaVideoRecuperacionSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminaVideoRecuperacion" />
+  </wsdl:message>
+  <wsdl:message name="EliminaVideoRecuperacionSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminaVideoRecuperacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPrioridadVideoRecuSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaPrioridadVideoRecu" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPrioridadVideoRecuSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaPrioridadVideoRecuResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearNuevaCollectionSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearNuevaCollection" />
+  </wsdl:message>
+  <wsdl:message name="CrearNuevaCollectionSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearNuevaCollectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListaImagenesUniverseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListaImagenesUniverse" />
+  </wsdl:message>
+  <wsdl:message name="GetListaImagenesUniverseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListaImagenesUniverseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardaAcopladosSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardaAcoplados" />
+  </wsdl:message>
+  <wsdl:message name="GuardaAcopladosSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardaAcopladosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardaImgXAcopladoSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardaImgXAcoplado" />
+  </wsdl:message>
+  <wsdl:message name="GuardaImgXAcopladoSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardaImgXAcopladoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListaAcopladosSoapIn">
+    <wsdl:part name="parameters" element="tns:getListaAcoplados" />
+  </wsdl:message>
+  <wsdl:message name="getListaAcopladosSoapOut">
+    <wsdl:part name="parameters" element="tns:getListaAcopladosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListaAcopladosImgSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListaAcopladosImg" />
+  </wsdl:message>
+  <wsdl:message name="GetListaAcopladosImgSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListaAcopladosImgResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListaImagenesXAcopladoSoapIn">
+    <wsdl:part name="parameters" element="tns:getListaImagenesXAcoplado" />
+  </wsdl:message>
+  <wsdl:message name="getListaImagenesXAcopladoSoapOut">
+    <wsdl:part name="parameters" element="tns:getListaImagenesXAcopladoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminaTodoAcopladoSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminaTodoAcoplado" />
+  </wsdl:message>
+  <wsdl:message name="EliminaTodoAcopladoSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminaTodoAcopladoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminaImagenesXAcopladoSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminaImagenesXAcoplado" />
+  </wsdl:message>
+  <wsdl:message name="EliminaImagenesXAcopladoSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminaImagenesXAcopladoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaAcopladoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizaAcoplado" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaAcopladoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizaAcopladoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaImagenesSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaImagenes" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaImagenesSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaImagenesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaImagenesOTByVideoReferenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaImagenesOTByVideoReferencia" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaImagenesOTByVideoReferenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaImagenesOTByVideoReferenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaImagenesOTByVideoReferenciaExtraDetalleSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaImagenesOTByVideoReferenciaExtraDetalle" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaImagenesOTByVideoReferenciaExtraDetalleSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaImagenesOTByVideoReferenciaExtraDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPlayListOTSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaPlayListOT" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPlayListOTSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaPlayListOTResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService_RecuperaVideoSoap">
+    <wsdl:operation name="GetRestoreFromDiva">
+      <wsdl:input message="tns:GetRestoreFromDivaSoapIn" />
+      <wsdl:output message="tns:GetRestoreFromDivaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRequestDiva">
+      <wsdl:input message="tns:SaveRequestDivaSoapIn" />
+      <wsdl:output message="tns:SaveRequestDivaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HabilitaSession">
+      <wsdl:input message="tns:HabilitaSessionSoapIn" />
+      <wsdl:output message="tns:HabilitaSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRequestDivaEscaleta">
+      <wsdl:input message="tns:SaveRequestDivaEscaletaSoapIn" />
+      <wsdl:output message="tns:SaveRequestDivaEscaletaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVideoRecuperacionArchivos">
+      <wsdl:input message="tns:ConsultaVideoRecuperacionArchivosSoapIn" />
+      <wsdl:output message="tns:ConsultaVideoRecuperacionArchivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPrivilegioRecuperacion">
+      <wsdl:input message="tns:ConsultaPrivilegioRecuperacionSoapIn" />
+      <wsdl:output message="tns:ConsultaPrivilegioRecuperacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTipoRecuperacionVideos">
+      <wsdl:input message="tns:ConsultaTipoRecuperacionVideosSoapIn" />
+      <wsdl:output message="tns:ConsultaTipoRecuperacionVideosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVideoRecuperacionPorEmpleado">
+      <wsdl:input message="tns:ConsultaVideoRecuperacionPorEmpleadoSoapIn" />
+      <wsdl:output message="tns:ConsultaVideoRecuperacionPorEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarVideoRecuperacionyArchivos">
+      <wsdl:input message="tns:InsertarVideoRecuperacionyArchivosSoapIn" />
+      <wsdl:output message="tns:InsertarVideoRecuperacionyArchivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMarcasVideoRecuperacionyArchivos">
+      <wsdl:input message="tns:InsertarMarcasVideoRecuperacionyArchivosSoapIn" />
+      <wsdl:output message="tns:InsertarMarcasVideoRecuperacionyArchivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrefixArchivo">
+      <wsdl:input message="tns:GetPrefixArchivoSoapIn" />
+      <wsdl:output message="tns:GetPrefixArchivoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDatosSolicitudEditor">
+      <wsdl:input message="tns:ConsultaDatosSolicitudEditorSoapIn" />
+      <wsdl:output message="tns:ConsultaDatosSolicitudEditorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecuperacionesXNumEmpleado">
+      <wsdl:input message="tns:ObtenerRecuperacionesXNumEmpleadoSoapIn" />
+      <wsdl:output message="tns:ObtenerRecuperacionesXNumEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBusquedasByUsuario">
+      <wsdl:input message="tns:getBusquedasByUsuarioSoapIn" />
+      <wsdl:output message="tns:getBusquedasByUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBusquedasByUsuarioFilters">
+      <wsdl:input message="tns:getBusquedasByUsuarioFiltersSoapIn" />
+      <wsdl:output message="tns:getBusquedasByUsuarioFiltersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaBusquedas">
+      <wsdl:input message="tns:GuardaBusquedasSoapIn" />
+      <wsdl:output message="tns:GuardaBusquedasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BorraBusquedaByNombre">
+      <wsdl:input message="tns:BorraBusquedaByNombreSoapIn" />
+      <wsdl:output message="tns:BorraBusquedaByNombreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaVideoRecuperacion">
+      <wsdl:input message="tns:EliminaVideoRecuperacionSoapIn" />
+      <wsdl:output message="tns:EliminaVideoRecuperacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPrioridadVideoRecu">
+      <wsdl:input message="tns:ConsultaPrioridadVideoRecuSoapIn" />
+      <wsdl:output message="tns:ConsultaPrioridadVideoRecuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearNuevaCollection">
+      <wsdl:input message="tns:CrearNuevaCollectionSoapIn" />
+      <wsdl:output message="tns:CrearNuevaCollectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaImagenesUniverse">
+      <wsdl:input message="tns:GetListaImagenesUniverseSoapIn" />
+      <wsdl:output message="tns:GetListaImagenesUniverseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaAcoplados">
+      <wsdl:input message="tns:GuardaAcopladosSoapIn" />
+      <wsdl:output message="tns:GuardaAcopladosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaImgXAcoplado">
+      <wsdl:input message="tns:GuardaImgXAcopladoSoapIn" />
+      <wsdl:output message="tns:GuardaImgXAcopladoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaAcoplados">
+      <wsdl:input message="tns:getListaAcopladosSoapIn" />
+      <wsdl:output message="tns:getListaAcopladosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaAcopladosImg">
+      <wsdl:input message="tns:GetListaAcopladosImgSoapIn" />
+      <wsdl:output message="tns:GetListaAcopladosImgSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getListaImagenesXAcoplado">
+      <wsdl:input message="tns:getListaImagenesXAcopladoSoapIn" />
+      <wsdl:output message="tns:getListaImagenesXAcopladoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaTodoAcoplado">
+      <wsdl:input message="tns:EliminaTodoAcopladoSoapIn" />
+      <wsdl:output message="tns:EliminaTodoAcopladoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaImagenesXAcoplado">
+      <wsdl:input message="tns:EliminaImagenesXAcopladoSoapIn" />
+      <wsdl:output message="tns:EliminaImagenesXAcopladoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaAcoplado">
+      <wsdl:input message="tns:ActualizaAcopladoSoapIn" />
+      <wsdl:output message="tns:ActualizaAcopladoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaImagenes">
+      <wsdl:input message="tns:ConsultaImagenesSoapIn" />
+      <wsdl:output message="tns:ConsultaImagenesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaImagenesOTByVideoReferencia">
+      <wsdl:input message="tns:ConsultaImagenesOTByVideoReferenciaSoapIn" />
+      <wsdl:output message="tns:ConsultaImagenesOTByVideoReferenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaImagenesOTByVideoReferenciaExtraDetalle">
+      <wsdl:input message="tns:ConsultaImagenesOTByVideoReferenciaExtraDetalleSoapIn" />
+      <wsdl:output message="tns:ConsultaImagenesOTByVideoReferenciaExtraDetalleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPlayListOT">
+      <wsdl:input message="tns:ConsultaPlayListOTSoapIn" />
+      <wsdl:output message="tns:ConsultaPlayListOTSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService_RecuperaVideoSoap" type="tns:WebService_RecuperaVideoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRestoreFromDiva">
+      <soap:operation soapAction="http://tempuri.org/GetRestoreFromDiva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRequestDiva">
+      <soap:operation soapAction="http://tempuri.org/SaveRequestDiva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabilitaSession">
+      <soap:operation soapAction="http://tempuri.org/HabilitaSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRequestDivaEscaleta">
+      <soap:operation soapAction="http://tempuri.org/SaveRequestDivaEscaleta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVideoRecuperacionArchivos">
+      <soap:operation soapAction="http://tempuri.org/ConsultaVideoRecuperacionArchivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPrivilegioRecuperacion">
+      <soap:operation soapAction="http://tempuri.org/ConsultaPrivilegioRecuperacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTipoRecuperacionVideos">
+      <soap:operation soapAction="http://tempuri.org/ConsultaTipoRecuperacionVideos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVideoRecuperacionPorEmpleado">
+      <soap:operation soapAction="http://tempuri.org/ConsultaVideoRecuperacionPorEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarVideoRecuperacionyArchivos">
+      <soap:operation soapAction="http://tempuri.org/InsertarVideoRecuperacionyArchivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMarcasVideoRecuperacionyArchivos">
+      <soap:operation soapAction="http://tempuri.org/InsertarMarcasVideoRecuperacionyArchivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrefixArchivo">
+      <soap:operation soapAction="http://tempuri.org/GetPrefixArchivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDatosSolicitudEditor">
+      <soap:operation soapAction="http://tempuri.org/ConsultaDatosSolicitudEditor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecuperacionesXNumEmpleado">
+      <soap:operation soapAction="http://tempuri.org/ObtenerRecuperacionesXNumEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBusquedasByUsuario">
+      <soap:operation soapAction="http://tempuri.org/getBusquedasByUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBusquedasByUsuarioFilters">
+      <soap:operation soapAction="http://tempuri.org/getBusquedasByUsuarioFilters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaBusquedas">
+      <soap:operation soapAction="http://tempuri.org/GuardaBusquedas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorraBusquedaByNombre">
+      <soap:operation soapAction="http://tempuri.org/BorraBusquedaByNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaVideoRecuperacion">
+      <soap:operation soapAction="http://tempuri.org/EliminaVideoRecuperacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPrioridadVideoRecu">
+      <soap:operation soapAction="http://tempuri.org/ConsultaPrioridadVideoRecu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearNuevaCollection">
+      <soap:operation soapAction="http://tempuri.org/CrearNuevaCollection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaImagenesUniverse">
+      <soap:operation soapAction="http://tempuri.org/GetListaImagenesUniverse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaAcoplados">
+      <soap:operation soapAction="http://tempuri.org/GuardaAcoplados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaImgXAcoplado">
+      <soap:operation soapAction="http://tempuri.org/GuardaImgXAcoplado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaAcoplados">
+      <soap:operation soapAction="http://tempuri.org/getListaAcoplados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaAcopladosImg">
+      <soap:operation soapAction="http://tempuri.org/GetListaAcopladosImg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaImagenesXAcoplado">
+      <soap:operation soapAction="http://tempuri.org/getListaImagenesXAcoplado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaTodoAcoplado">
+      <soap:operation soapAction="http://tempuri.org/EliminaTodoAcoplado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaImagenesXAcoplado">
+      <soap:operation soapAction="http://tempuri.org/EliminaImagenesXAcoplado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaAcoplado">
+      <soap:operation soapAction="http://tempuri.org/ActualizaAcoplado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaImagenes">
+      <soap:operation soapAction="http://tempuri.org/ConsultaImagenes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaImagenesOTByVideoReferencia">
+      <soap:operation soapAction="http://tempuri.org/ConsultaImagenesOTByVideoReferencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaImagenesOTByVideoReferenciaExtraDetalle">
+      <soap:operation soapAction="http://tempuri.org/ConsultaImagenesOTByVideoReferenciaExtraDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPlayListOT">
+      <soap:operation soapAction="http://tempuri.org/ConsultaPlayListOT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService_RecuperaVideoSoap12" type="tns:WebService_RecuperaVideoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRestoreFromDiva">
+      <soap12:operation soapAction="http://tempuri.org/GetRestoreFromDiva" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRequestDiva">
+      <soap12:operation soapAction="http://tempuri.org/SaveRequestDiva" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HabilitaSession">
+      <soap12:operation soapAction="http://tempuri.org/HabilitaSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRequestDivaEscaleta">
+      <soap12:operation soapAction="http://tempuri.org/SaveRequestDivaEscaleta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVideoRecuperacionArchivos">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaVideoRecuperacionArchivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPrivilegioRecuperacion">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaPrivilegioRecuperacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTipoRecuperacionVideos">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaTipoRecuperacionVideos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVideoRecuperacionPorEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaVideoRecuperacionPorEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarVideoRecuperacionyArchivos">
+      <soap12:operation soapAction="http://tempuri.org/InsertarVideoRecuperacionyArchivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarMarcasVideoRecuperacionyArchivos">
+      <soap12:operation soapAction="http://tempuri.org/InsertarMarcasVideoRecuperacionyArchivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrefixArchivo">
+      <soap12:operation soapAction="http://tempuri.org/GetPrefixArchivo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDatosSolicitudEditor">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaDatosSolicitudEditor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerRecuperacionesXNumEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerRecuperacionesXNumEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBusquedasByUsuario">
+      <soap12:operation soapAction="http://tempuri.org/getBusquedasByUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBusquedasByUsuarioFilters">
+      <soap12:operation soapAction="http://tempuri.org/getBusquedasByUsuarioFilters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaBusquedas">
+      <soap12:operation soapAction="http://tempuri.org/GuardaBusquedas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorraBusquedaByNombre">
+      <soap12:operation soapAction="http://tempuri.org/BorraBusquedaByNombre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaVideoRecuperacion">
+      <soap12:operation soapAction="http://tempuri.org/EliminaVideoRecuperacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPrioridadVideoRecu">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaPrioridadVideoRecu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearNuevaCollection">
+      <soap12:operation soapAction="http://tempuri.org/CrearNuevaCollection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaImagenesUniverse">
+      <soap12:operation soapAction="http://tempuri.org/GetListaImagenesUniverse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaAcoplados">
+      <soap12:operation soapAction="http://tempuri.org/GuardaAcoplados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaImgXAcoplado">
+      <soap12:operation soapAction="http://tempuri.org/GuardaImgXAcoplado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaAcoplados">
+      <soap12:operation soapAction="http://tempuri.org/getListaAcoplados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaAcopladosImg">
+      <soap12:operation soapAction="http://tempuri.org/GetListaAcopladosImg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListaImagenesXAcoplado">
+      <soap12:operation soapAction="http://tempuri.org/getListaImagenesXAcoplado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaTodoAcoplado">
+      <soap12:operation soapAction="http://tempuri.org/EliminaTodoAcoplado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaImagenesXAcoplado">
+      <soap12:operation soapAction="http://tempuri.org/EliminaImagenesXAcoplado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaAcoplado">
+      <soap12:operation soapAction="http://tempuri.org/ActualizaAcoplado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaImagenes">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaImagenes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaImagenesOTByVideoReferencia">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaImagenesOTByVideoReferencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaImagenesOTByVideoReferenciaExtraDetalle">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaImagenesOTByVideoReferenciaExtraDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPlayListOT">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaPlayListOT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService_RecuperaVideo">
+    <wsdl:port name="WebService_RecuperaVideoSoap" binding="tns:WebService_RecuperaVideoSoap">
+      <soap:address location="http://localhost:6231/FIATubeHtml5/ServicesAsmx/WebService_RecuperaVideo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService_RecuperaVideoSoap12" binding="tns:WebService_RecuperaVideoSoap12">
+      <soap12:address location="http://localhost:6231/FIATubeHtml5/ServicesAsmx/WebService_RecuperaVideo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

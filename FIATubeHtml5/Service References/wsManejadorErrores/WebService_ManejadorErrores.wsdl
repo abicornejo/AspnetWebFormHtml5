@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="DoWork">
+        <s:complexType />
+      </s:element>
+      <s:element name="DoWorkResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GuardarLogError">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogError" type="tns:THE_LogErrores" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="THE_LogErrores">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CveLogErrores" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CveEmpleado" type="tns:TDI_EMPL" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pantalla" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dominio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MachineName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DirIP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_EMPL">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EmpleadoLlavePrimaria" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoTipo" type="tns:TDI_TipoEmpleado" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoNombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoUsr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmpleadoNumero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmpleadoChk" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmpleadoChkVisible" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TDI_TipoEmpleado">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EmpleadoTipo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescripcionTipoEmpleado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GuardarLogErrorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GuardarLogErrorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DoWorkSoapIn">
+    <wsdl:part name="parameters" element="tns:DoWork" />
+  </wsdl:message>
+  <wsdl:message name="DoWorkSoapOut">
+    <wsdl:part name="parameters" element="tns:DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarLogErrorSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarLogError" />
+  </wsdl:message>
+  <wsdl:message name="GuardarLogErrorSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarLogErrorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService_ManejadorErroresSoap">
+    <wsdl:operation name="DoWork">
+      <wsdl:input message="tns:DoWorkSoapIn" />
+      <wsdl:output message="tns:DoWorkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarLogError">
+      <wsdl:input message="tns:GuardarLogErrorSoapIn" />
+      <wsdl:output message="tns:GuardarLogErrorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService_ManejadorErroresSoap" type="tns:WebService_ManejadorErroresSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap:operation soapAction="http://tempuri.org/DoWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarLogError">
+      <soap:operation soapAction="http://tempuri.org/GuardarLogError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService_ManejadorErroresSoap12" type="tns:WebService_ManejadorErroresSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DoWork">
+      <soap12:operation soapAction="http://tempuri.org/DoWork" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarLogError">
+      <soap12:operation soapAction="http://tempuri.org/GuardarLogError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService_ManejadorErrores">
+    <wsdl:port name="WebService_ManejadorErroresSoap" binding="tns:WebService_ManejadorErroresSoap">
+      <soap:address location="http://localhost:6231/FIATubeHtml5/ServicesAsmx/WebService_ManejadorErrores.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService_ManejadorErroresSoap12" binding="tns:WebService_ManejadorErroresSoap12">
+      <soap12:address location="http://localhost:6231/FIATubeHtml5/ServicesAsmx/WebService_ManejadorErrores.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
